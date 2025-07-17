@@ -5,6 +5,42 @@ This tool converts RDF Turtle (.ttl) ontology files (like DBpedia) into CSV form
 ![DBpedia Ontology Visualization Example](dbpedia_example.png)
 *Example visualization of DBpedia ontology structure generated from this tool*
 
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Command Line Usage](#command-line-usage)
+  - [Programmatic Usage](#programmatic-usage)
+- [Output Files](#output-files)
+  - [Graph Edges File](#1-graph-edges-file-_edgescsv)
+  - [Node Metadata File](#2-node-metadata-file-_nodescsv)
+  - [Statistics File](#3-statistics-file-_statisticstxt)
+- [Visualization Integration](#visualization-integration)
+  - [For Gephi](#for-gephi)
+  - [For Cytoscape](#for-cytoscape)
+  - [For Web Visualization](#for-web-visualization-d3js-visjs-etc)
+- [Filtering Options](#filtering-options)
+  - [Predicate Filtering](#predicate-filtering)
+  - [Common DBpedia Predicates](#common-dbpedia-predicates)
+- [Node Type Color Scheme](#node-type-color-scheme)
+- [Performance Considerations](#performance-considerations)
+- [Examples](#examples)
+  - [Example 1: DBpedia Person Networks](#example-1-dbpedia-person-networks)
+  - [Example 2: Ontology Structure](#example-2-ontology-structure)
+  - [Example 3: Geographic Networks](#example-3-geographic-networks)
+- [Complete Use Case Example: DBpedia Ontology Visualization](#complete-use-case-example-dbpedia-ontology-visualization)
+  - [Files in This Example](#files-in-this-example)
+  - [Using with Cosmograph](#using-with-cosmograph-cosmographapp)
+  - [Visualization Result](#visualization-result)
+  - [Generated Network Statistics](#generated-network-statistics)
+  - [Reproducing This Example](#reproducing-this-example)
+- [Troubleshooting](#troubleshooting)
+  - [Common Issues](#common-issues)
+  - [Getting Help](#getting-help)
+- [Quick Reference: Using with Cosmograph](#quick-reference-using-with-cosmograph)
+- [License](#license)
+
 ## Features
 
 - **Graph Edges**: Extracts subject-predicate-object relationships as network edges
@@ -346,4 +382,6 @@ For the fastest setup with Cosmograph (cosmograph.app):
 
 ## License
 
-This tool is provided as-is for educational and research purposes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+This tool is provided for educational and research purposes.
