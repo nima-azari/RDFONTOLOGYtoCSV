@@ -2,6 +2,9 @@
 
 This tool converts RDF Turtle (.ttl) ontology files (like DBpedia) into CSV format suitable for network visualization tools such as Gephi, Cytoscape, or web-based visualization libraries.
 
+![DBpedia Ontology Visualization Example](dbpedia_example.png)
+*Example visualization of DBpedia ontology structure generated from this tool*
+
 ## Features
 
 - **Graph Edges**: Extracts subject-predicate-object relationships as network edges
@@ -10,6 +13,7 @@ This tool converts RDF Turtle (.ttl) ontology files (like DBpedia) into CSV form
 - **Statistics**: Provides detailed conversion statistics and summaries
 - **Color Coding**: Automatic color assignment based on node types
 - **Size Scaling**: Node sizes based on degree (number of connections)
+- **Complete Example**: Includes DBpedia ontology sample with visualization (see `dbpedia_example.png`)
 
 ## Installation
 
@@ -233,6 +237,69 @@ edges_file, nodes_file = converter.convert(
 )
 ```
 
+## Complete Use Case Example: DBpedia Ontology Visualization
+
+This repository includes a complete example using DBpedia ontology data to demonstrate the conversion and visualization workflow.
+
+### Files in This Example
+
+- **Input**: `sparql_2025-07-17_07-56-39Z.ttl` - DBpedia ontology subset
+- **Output**: 
+  - `sparql_2025-07-17_07-56-39Z_edges.csv` - Graph relationships (8,454 edges)
+  - `sparql_2025-07-17_07-56-39Z_nodes.csv` - Node metadata (3,807 nodes)
+- **Visualization**: `dbpedia_example.png` - Sample network visualization
+
+### Using with Cosmograph (cosmograph.app)
+
+This example demonstrates how to use the generated files with Cosmograph, a web-based network visualization tool:
+
+1. **Graph Data (Required)**: Upload `sparql_2025-07-17_07-56-39Z_edges.csv`
+   - Contains source-target relationships
+   - Includes edge labels and types for styling
+   - 8,454 relationships showing ontology structure
+
+2. **Graph Metadata (Optional)**: Upload `sparql_2025-07-17_07-56-39Z_nodes.csv`
+   - Contains node styling information (colors, sizes, labels)
+   - 3,807 entities with type-based color coding:
+     - Classes (red): 788 nodes
+     - DatatypeProperty (gray): 1,854 nodes  
+     - ObjectProperty (gray): 1,164 nodes
+   - Node sizes based on connection degree
+
+### Visualization Result
+
+The resulting visualization (see `dbpedia_example.png`) shows:
+- **Ontology structure** with classes, properties, and their relationships
+- **Type-based coloring** to distinguish entity types
+- **Hierarchical layout** showing inheritance relationships
+- **Interactive exploration** of the DBpedia ontology
+
+### Generated Network Statistics
+
+From the example conversion:
+- **Total nodes**: 3,807 entities
+- **Total edges**: 8,454 relationships
+- **Node types**: Classes (788), DatatypeProperty (1,854), ObjectProperty (1,164)
+- **Relationship types**: rdf:type, rdfs:subClassOf, rdfs:subPropertyOf, rdfs:label
+- **Average degree**: 4.4 connections per node
+
+### Reproducing This Example
+
+```bash
+# Convert the DBpedia ontology file
+python rdf_to_csv_converter.py sparql_2025-07-17_07-56-39Z.ttl
+
+# Files generated:
+# - sparql_2025-07-17_07-56-39Z_edges.csv
+# - sparql_2025-07-17_07-56-39Z_nodes.csv
+# - sparql_2025-07-17_07-56-39Z_statistics.txt
+```
+
+Then upload the CSV files to your preferred visualization tool:
+- **Cosmograph**: Upload edges.csv as main data, nodes.csv as metadata
+- **Gephi**: Import edges as data table, nodes as node attributes
+- **Cytoscape**: Load edges as network, nodes as node table
+
 ## Troubleshooting
 
 ### Common Issues
@@ -260,6 +327,22 @@ python example_usage.py
 ```
 
 This will create sample data and demonstrate the conversion process.
+
+## Quick Reference: Using with Cosmograph
+
+For the fastest setup with Cosmograph (cosmograph.app):
+
+1. **Main Data File** (required): Upload your `*_edges.csv` file
+   - Contains source and target columns for network structure
+   
+2. **Metadata File** (optional): Upload your `*_nodes.csv` file  
+   - Provides node colors, sizes, and labels
+   - Must have an `id` column matching the edges file
+
+**Example with this repository:**
+- Main Data: `sparql_2025-07-17_07-56-39Z_edges.csv`
+- Metadata: `sparql_2025-07-17_07-56-39Z_nodes.csv`
+- Result: Interactive DBpedia ontology network (see `dbpedia_example.png`)
 
 ## License
 
