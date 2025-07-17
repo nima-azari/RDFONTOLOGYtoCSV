@@ -64,6 +64,12 @@ class RDFToCSVConverter:
         self.node_types = defaultdict(set)
         self.predicates_count = defaultdict(int)
         
+        # Label statistics
+        self.skos_labels_count = 0
+        self.rdfs_labels_count = 0
+        self.uri_fragments_count = 0
+        self.skos_definitions_count = 0
+        
         # Common namespaces
         self.namespaces = {
             'rdf': RDF,
@@ -94,14 +100,17 @@ class RDFToCSVConverter:
         # First try to get skos:prefLabel (highest priority)
         for label in self.graph.objects(uri, self.namespaces['skos'].prefLabel):
             if isinstance(label, Literal):
+                self.skos_labels_count += 1
                 return str(label)
         
         # Then try rdfs:label
         for label in self.graph.objects(uri, RDFS.label):
             if isinstance(label, Literal):
+                self.rdfs_labels_count += 1
                 return str(label)
         
         # If no label, extract from URI
+        self.uri_fragments_count += 1
         uri_str = str(uri)
         
         # Handle common URI patterns
@@ -111,6 +120,15 @@ class RDFToCSVConverter:
             return uri_str.split('/')[-1]
         else:
             return uri_str
+    
+    def extract_uri_definition(self, uri: URIRef) -> str:
+        """Extract SKOS definition for a URI."""
+        # Try to get skos:definition
+        for definition in self.graph.objects(uri, self.namespaces['skos'].definition):
+            if isinstance(definition, Literal):
+                self.skos_definitions_count += 1
+                return str(definition)
+        return ""
     
     def get_node_type(self, node: URIRef) -> str:
         """Get the type of a node."""
@@ -213,10 +231,12 @@ class RDFToCSVConverter:
             # Add nodes to metadata
             if str(subject) not in self.nodes:
                 subject_type = self.get_node_type(subject)
+                subject_definition = self.extract_uri_definition(subject)
                 self.nodes[str(subject)] = {
                     'id': str(subject),
                     'label': subject_label,
                     'type': subject_type,
+                    'definition': subject_definition,
                     'color': self.get_node_color_by_type(subject_type),
                     'size': 10  # Default size
                 }
@@ -224,10 +244,12 @@ class RDFToCSVConverter:
             
             if obj_id not in self.nodes and not isinstance(obj, Literal):
                 obj_type = self.get_node_type(obj) if isinstance(obj, URIRef) else "Literal"
+                obj_definition = self.extract_uri_definition(obj) if isinstance(obj, URIRef) else ""
                 self.nodes[obj_id] = {
                     'id': obj_id,
                     'label': obj_label,
                     'type': obj_type,
+                    'definition': obj_definition,
                     'color': self.get_node_color_by_type(obj_type),
                     'size': 10  # Default size
                 }
@@ -302,7 +324,14 @@ class RDFToCSVConverter:
             'node_type_counts': {k: len(v) for k, v in self.node_types.items()},
             'predicate_counts': dict(self.predicates_count),
             'top_predicates': sorted(self.predicates_count.items(), 
-                                   key=lambda x: x[1], reverse=True)[:10]
+                                   key=lambda x: x[1], reverse=True)[:10],
+            'label_statistics': {
+                'skos_preflabels': self.skos_labels_count,
+                'rdfs_labels': self.rdfs_labels_count,
+                'uri_fragments': self.uri_fragments_count,
+                'skos_definitions': self.skos_definitions_count,
+                'total_labels': self.skos_labels_count + self.rdfs_labels_count + self.uri_fragments_count
+            }
         }
         return stats
     
@@ -322,6 +351,14 @@ class RDFToCSVConverter:
             f.write(f"Total RDF triples: {stats['total_triples']}\n")
             f.write(f"Extracted edges: {stats['total_edges']}\n")
             f.write(f"Extracted nodes: {stats['total_nodes']}\n\n")
+            
+            f.write("Label Extraction Statistics:\n")
+            f.write("-" * 30 + "\n")
+            f.write(f"SKOS prefLabels: {stats['label_statistics']['skos_preflabels']}\n")
+            f.write(f"RDFS labels: {stats['label_statistics']['rdfs_labels']}\n")
+            f.write(f"URI fragments: {stats['label_statistics']['uri_fragments']}\n")
+            f.write(f"SKOS definitions: {stats['label_statistics']['skos_definitions']}\n")
+            f.write(f"Total labels: {stats['label_statistics']['total_labels']}\n\n")
             
             f.write("Node Types:\n")
             f.write("-" * 20 + "\n")
@@ -399,6 +436,11 @@ def main():
         print(f"Total edges: {stats['total_edges']}")
         print(f"Total nodes: {stats['total_nodes']}")
         print(f"Node types: {len(stats['node_type_counts'])}")
+        print(f"\nLabel Extraction:")
+        print(f"SKOS prefLabels: {stats['label_statistics']['skos_preflabels']}")
+        print(f"RDFS labels: {stats['label_statistics']['rdfs_labels']}")
+        print(f"URI fragments: {stats['label_statistics']['uri_fragments']}")
+        print(f"SKOS definitions: {stats['label_statistics']['skos_definitions']}")
         
     except Exception as e:
         logger.error(f"Conversion failed: {e}")
