@@ -1,0 +1,34 @@
+RDF to CSV Conversion Statistics
+========================================
+
+Source file: nen2660.ttl
+Total RDF triples: 1647
+Extracted edges: 1174
+Extracted nodes: 222
+
+Node Types:
+--------------------
+Concept: 94
+Unknown: 24
+Property: 38
+Class: 45
+ConceptScheme: 1
+Ontology: 3
+EnumerationType: 2
+NodeShape: 3
+TransferType: 4
+AggregationStateType: 4
+AllDisjointClasses: 4
+
+Top 10 Predicates:
+--------------------
+type: 313
+definition: 282
+prefLabel: 275
+seeAlso: 94
+broader: 58
+subClassOf: 41
+range: 37
+domain: 33
+imports: 27
+subPropertyOf: 5

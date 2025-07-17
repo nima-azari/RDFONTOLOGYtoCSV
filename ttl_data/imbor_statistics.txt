@@ -1,0 +1,36 @@
+RDF to CSV Conversion Statistics
+========================================
+
+Source file: ttl_data\imbor.ttl
+Total RDF triples: 49274
+Extracted edges: 49274
+Extracted nodes: 8943
+
+Label Extraction Statistics:
+------------------------------
+SKOS prefLabels: 71663
+RDFS labels: 6
+URI fragments: 67151
+SKOS definitions: 8419
+Total labels: 138820
+
+Node Types:
+--------------------
+Concept: 8919
+ConceptScheme: 1
+Unknown: 5
+Collection: 17
+Ontology: 1
+
+Top 10 Predicates:
+--------------------
+type: 8938
+prefLabel: 8937
+inScheme: 8919
+member: 8919
+definition: 8419
+broader: 4460
+note: 300
+altLabel: 275
+hasTopConcept: 97
+versionInfo: 2
