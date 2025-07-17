@@ -7,6 +7,13 @@ suitable for network visualization tools. It generates two files:
 1. Graph edges file (required): Contains source-target relationships
 2. Graph metadata file (optional): Contains node properties for styling
 
+Features:
+- SKOS prefLabel support with priority over rdfs:label
+- Automatic color coding by node type
+- Node sizing based on connection degree
+- Flexible predicate filtering
+- Support for multiple namespaces (RDF, RDFS, OWL, SKOS, DBpedia, etc.)
+
 Requirements:
 - rdflib: pip install rdflib
 - pandas: pip install pandas
@@ -63,6 +70,7 @@ class RDFToCSVConverter:
             'rdfs': RDFS,
             'owl': OWL,
             'xsd': XSD,
+            'skos': Namespace('http://www.w3.org/2004/02/skos/core#'),
             'dbo': Namespace('http://dbpedia.org/ontology/'),
             'dbr': Namespace('http://dbpedia.org/resource/'),
             'foaf': Namespace('http://xmlns.com/foaf/0.1/'),
@@ -82,8 +90,13 @@ class RDFToCSVConverter:
             return False
     
     def extract_uri_label(self, uri: URIRef) -> str:
-        """Extract a readable label from URI."""
-        # First try to get rdfs:label
+        """Extract a readable label from URI with priority: skos:prefLabel > rdfs:label > URI fragment."""
+        # First try to get skos:prefLabel (highest priority)
+        for label in self.graph.objects(uri, self.namespaces['skos'].prefLabel):
+            if isinstance(label, Literal):
+                return str(label)
+        
+        # Then try rdfs:label
         for label in self.graph.objects(uri, RDFS.label):
             if isinstance(label, Literal):
                 return str(label)
