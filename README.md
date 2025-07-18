@@ -46,6 +46,7 @@ This tool converts RDF Turtle (.ttl) ontology files (like DBpedia) into CSV form
 - **Graph Edges**: Extracts subject-predicate-object relationships as network edges
 - **Node Metadata**: Generates node properties including labels, types, colors, and sizes
 - **Flexible Filtering**: Option to filter by specific predicates or relationship types
+- **Skip Unlabeled Nodes**: Option to skip nodes without RDFS/SKOS labels for cleaner visualization
 - **Statistics**: Provides detailed conversion statistics and summaries
 - **Color Coding**: Automatic color assignment based on node types
 - **Size Scaling**: Node sizes based on degree (number of connections)
@@ -99,6 +100,14 @@ edges_file, nodes_file = converter.convert(
     filter_predicates=['rdf:type', 'rdfs:subClassOf', 'dbo:birthPlace'],
     edges_filename='relationships.csv',
     nodes_filename='entities.csv'
+)
+
+# Skip nodes without RDFS/SKOS labels for cleaner visualization
+converter = RDFToCSVConverter('ontology.ttl')
+edges_file, nodes_file = converter.convert(
+    skip_unlabeled=True,  # Only include nodes with proper labels
+    edges_filename='clean_edges.csv',
+    nodes_filename='clean_nodes.csv'
 )
 
 # Get statistics

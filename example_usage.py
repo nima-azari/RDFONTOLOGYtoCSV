@@ -34,6 +34,58 @@ def example_basic_conversion(ttl_file_path: str):
     print(f"  Node types: {list(stats['node_type_counts'].keys())}")
 
 
+def example_skip_unlabeled(ttl_file_path: str):
+    """Example: Skip nodes without RDFS/SKOS labels for cleaner visualization."""
+    print("\n=== Skip Unlabeled Nodes Example ===")
+    
+    converter = RDFToCSVConverter(ttl_file_path)
+    
+    # First run with all nodes
+    print("Converting with all nodes...")
+    edges_file_all, nodes_file_all = converter.convert(
+        edges_filename="all_nodes_edges.csv",
+        nodes_filename="all_nodes_nodes.csv"
+    )
+    stats_all = converter.generate_statistics()
+    
+    # Reset converter for second run
+    converter = RDFToCSVConverter(ttl_file_path)
+    
+    # Second run skipping unlabeled nodes
+    print("Converting with skip_unlabeled=True...")
+    edges_file_labeled, nodes_file_labeled = converter.convert(
+        skip_unlabeled=True,
+        edges_filename="labeled_only_edges.csv",
+        nodes_filename="labeled_only_nodes.csv"
+    )
+    stats_labeled = converter.generate_statistics()
+    
+    print(f"\nComparison:")
+    print(f"  All nodes:")
+    print(f"    Edges: {stats_all['total_edges']:,}")
+    print(f"    Nodes: {stats_all['total_nodes']:,}")
+    print(f"    RDFS labels: {stats_all.get('rdfs_labels_used', 0):,}")
+    print(f"    SKOS labels: {stats_all.get('skos_labels_used', 0):,}")
+    print(f"    URI fragments: {stats_all.get('uri_fragments_used', 0):,}")
+    
+    print(f"  Labeled nodes only:")
+    print(f"    Edges: {stats_labeled['total_edges']:,}")
+    print(f"    Nodes: {stats_labeled['total_nodes']:,}")
+    print(f"    RDFS labels: {stats_labeled.get('rdfs_labels_used', 0):,}")
+    print(f"    SKOS labels: {stats_labeled.get('skos_labels_used', 0):,}")
+    print(f"    URI fragments: {stats_labeled.get('uri_fragments_used', 0):,}")
+    
+    reduction_edges = ((stats_all['total_edges'] - stats_labeled['total_edges']) / stats_all['total_edges']) * 100
+    reduction_nodes = ((stats_all['total_nodes'] - stats_labeled['total_nodes']) / stats_all['total_nodes']) * 100
+    
+    print(f"\nReduction achieved:")
+    print(f"  Edges reduced by: {reduction_edges:.1f}%")
+    print(f"  Nodes reduced by: {reduction_nodes:.1f}%")
+    print(f"\nFiles generated:")
+    print(f"  All nodes: {edges_file_all}, {nodes_file_all}")
+    print(f"  Labeled only: {edges_file_labeled}, {nodes_file_labeled}")
+
+
 def example_filtered_conversion(ttl_file_path: str):
     """Example: Convert only specific relationships."""
     print("\n=== Filtered Conversion Example ===")
@@ -162,6 +214,7 @@ def main():
         if Path(ttl_file).exists():
             example_basic_conversion(ttl_file)
             example_filtered_conversion(ttl_file)
+            example_skip_unlabeled(ttl_file)
         else:
             print(f"Error: File {ttl_file} not found!")
             sys.exit(1)
@@ -176,6 +229,8 @@ def main():
     print("   from rdf_to_csv_converter import RDFToCSVConverter")
     print("   converter = RDFToCSVConverter('your_file.ttl')")
     print("   edges_file, nodes_file = converter.convert()")
+    print("   # Skip nodes without RDFS/SKOS labels:")
+    print("   edges_file, nodes_file = converter.convert(skip_unlabeled=True)")
     
     print("\n=== Output Files ===")
     print("The converter generates these files:")

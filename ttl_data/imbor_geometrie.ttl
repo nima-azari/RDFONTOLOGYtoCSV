@@ -1,0 +1,2093 @@
+@prefix : <http://www.opengis.net/ont/geosparql#> .
+@prefix lspec: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/specifications/> .
+@prefix functions: <http://qudt.org/2.1/schema/extensions/functions#> .
+@prefix def: <http://wistor.nl/history/def##> .
+@prefix ns1840: <http://www.movares.nl/OTL/alpha/> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix path: <http://www.ontotext.com/path#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix qkdv: <http://qudt.org/vocab/dimensionvector/> .
+@prefix imbor-term: <https://data.crow.nl/imbor/term/> .
+@prefix bimv: <http://www.bim-connected.com/vocab#> .
+@prefix gld: <http://data.gelderland.nl/def/> .
+@prefix tabelDataConfig: <http://www.buildingbits.nl/tabelDataConfig#> .
+@prefix profile: <http://www.buildingbits.nl/2018/coins/schema/profile#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix besix: <http://data.besix.com/def/> .
+@prefix as: <https://www.w3.org/ns/activitystreams#> .
+@prefix bimc: <http://www.bim-connected.com/OTL/> .
+@prefix mim-model-ns: <http://ontology.mim-namespace.org/> .
+@prefix bam-vwl: <http://otl.bam.nl/def/domeinwaarde/> .
+@prefix sdo: <https://schema.org/> .
+@prefix wistor-term: <http://app.wistor.nl/term#> .
+@prefix exmp-inst: <https://example.com/Adam/instance/> .
+@prefix exmp-obj: <https://example.com/Adam_Verhardingen/> .
+@prefix abdl: <http://www.rws.nl/abdl#> .
+@prefix mc-map-coins: <http://otl.rws.nl/mc-map-coins#> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix ont-edit: <http://www.w3.org/bimconnected#> .
+@prefix actuele-wegenlijst: <http://otl.rws.nl/actuele-wegenlijst#> .
+@prefix bp: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/blueprint-manager/> .
+@prefix mjpv: <http://www.rws.nl/2018/vr/mjpv#> .
+@prefix bs: <https://w3id.org/def/basicsemantics-owl#> .
+@prefix search: <http://topbraid.org/search#> .
+@prefix savedQueries: <http://teamwork.topbraidlive.org/ui/savedQueries#> .
+@prefix tnt-xr: <http://otl.tennet.eu/tnt/def/xr/> .
+@prefix sem: <http://www.semmtech.com/schema/sem/> .
+@prefix RDM: <http://rotterdam.nl/data/RDM#> .
+@prefix begrip_hr: <http://opendata.stelselcatalogus.nl/hr/id/begrip/> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix xsl10: <http://www.w3.org/XSL/Transform/1.0> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix uix: <http://topbraidlive.org/uix#> .
+@prefix g: <http://www.buildingbits.nl/bimp/2021/garanties#> .
+@prefix hamm: <https://www.boskalis.com/2022/pim/demo/hamm#> .
+@prefix mc-mt0005: <http://otl.rws.nl/mc-mt0005#> .
+@prefix Rules: <http://www.bbsgroep.nl/application/v2/Rules.rdf#> .
+@prefix mc-mt0006: <http://otl.rws.nl/mc-mt0006#> .
+@prefix integrate: <http://data.ihlz.nl/id/dataset/integrate#> .
+@prefix ct: <http://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix v: <http://example.org/validation#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix x: <http://www.kvk.nl/innovatielab/hrld/> .
+@prefix DeltaSchema: <http://www.buildingbits.nl/coins2/DeltaSchema.rdf#> .
+@prefix config: <http://www.buildingbits.nl/coins2/coinsproducer/config#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bomag: <https://www.boskalis.com/2022/pim/demo/bomag#> .
+@prefix exmp-doc: <https://example.com/Adam_Verhardingen_Docs/> .
+@prefix oecc: <http://www.oegov.org/models/common/cc#> .
+@prefix ontologyprojects: <http://teamwork.topbraidlive.org/ontologyprojects#> .
+@prefix corpus: <http://topbraid.org/corpus#> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix do: <https://www.buildingbits.nl/2021/bimp/dodelijkeOngevallen#> .
+@prefix beo: <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix MovaresXML: <http://www.movares.nl/OTL/alpha/XYZ/MovaresXML.rdf#> .
+@prefix isaCore: <http://data.europa.eu/core-vocabularies/> .
+@prefix rel: <http://www.relatics.com/> .
+@prefix VenR: <http://www.buildingbits.nl/2017/coins2/VenR#> .
+@prefix begrip_pensioenfondsen: <http://opendata.stelselcatalogus.nl/pensioenfondsen/id/begrip/> .
+@prefix rep: <http://www.openrdf.org/config/repository#> .
+@prefix ea: <http://www.sparxsystems.eu/def/ea#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix iasset: <https://iasset.nl/> .
+@prefix evnprojects: <http://evn.topbraidlive.org/evnprojects#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix restapi: <https://data.crow.nl/rest-api/def#> .
+@prefix list: <http://jena.apache.org/ARQ/list#> .
+@prefix els: <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkset#> .
+@prefix graph: <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/graph/> .
+@prefix ex: <http://example.org/> .
+@prefix nen3610: <http://definities.geostandaarden.nl/def/nen3610#> .
+@prefix geoext: <http://rdf.useekm.com/ext#> .
+@prefix vcard2006: <http://www.w3.org/2006/vcard/ns#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix cbimotl: <http://www.coinsweb.nl/cbim-otl-1.1.owl#> .
+@prefix gqi: <http://www.openlinksw.com/schemas/graphql/intro#> .
+@prefix fog: <https://w3id.org/fog#> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix gql: <http://www.openlinksw.com/schemas/graphql#> .
+@prefix nlcs-p: <http://otl.nlcs.nl/def/eigenschap/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix nlcs-o: <http://data.digigo.nu/nlcs/def/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions> .
+@prefix lexigraph: <https://www.kadaster.nl/labs/lexigraph#> .
+@prefix gegeven_ladis: <http://opendata.stelselcatalogus.nl/ladis/id/gegevenselement/> .
+@prefix ogcgsf: <http://www.opengis.net/def/function/geosparql/> .
+@prefix gegeven_pensioenfondsen: <http://opendata.stelselcatalogus.nl/pensioenfondsen/id/gegevenselement/> .
+@prefix content: <http://rdf.bg/ontologies/content#> .
+@prefix gisib-vwl: <http://otl.amsterdam.nl/def/gisib/domeinwaarde/> .
+@prefix wistor-blanknode: <http://wistor.nl/blanknode#> .
+@prefix spellCheck: <http://evn.topbraidlive.org/static/scripts/spellcheck-report#> .
+@prefix nen3610-sh: <http://modellen.geostandaarden.nl/nen3610-2022/id/shape/> .
+@prefix int-otl: <http://www.wistor.nl/otleditor/ontologydefinition/internalontology#> .
+@prefix wistor-o: <http://wistor.nl/def/objecttype/> .
+@prefix wistor-p: <http://wistor.nl/def/property/> .
+@prefix wistor: <http://wistor.nl/> .
+@prefix ogcgsr: <http://www.opengis.net/def/rule/geosparql/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix begrip_ladis: <http://opendata.stelselcatalogus.nl/ladis/id/begrip/> .
+@prefix semnta: <http://www.example.org/ddasem/20181107161046/> .
+@prefix excel-otl: <http://example.org/excel-otl#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix go: <http://purl.org/obo/owl/GO#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix bomagOTL: <https://www.boskalis.com/2022/pim/demo/bomagOTL#> .
+@prefix gu-def: <http://GemeenteUtrecht.nl/def/> .
+@prefix evnui: <http://evn.topbraidlive.org/ui#> .
+@prefix tbcgeo: <http://www.topbraidcomposer.org/owl/2006/07/tbcgeo.owl#> .
+@prefix msg0: <http://web.resource.org/cc/> .
+@prefix bnode: <https://data.netwerkdigitaalerfgoed.nl/.well-known/genid/> .
+@prefix obo: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix bif: <bif:> .
+@prefix nlcs-shape: <http://otl.nlcs.nl/def/shape/> .
+@prefix gegeven_hr: <http://opendata.stelselcatalogus.nl/hr/id/gegevenselement/> .
+@prefix nen2660-term: <https://w3id.org/nen2660/term#> .
+@prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
+@prefix hh: <https://example.org/happyhours/> .
+@prefix otl-svt: <http://otl.rws.nl/otl-svt#> .
+@prefix bim: <https://www.bim-connected.com/def/> .
+@prefix inst_2: <https://www.ugent.be/myAwesomeSecondBIMProject#> .
+@prefix hr: <http://www.kvk.nl/2019/hr/gegevenscatalogus/def/kgrepresentation/04052020/> .
+@prefix bis: <http://www.wistor.nl/tennet/excel/def/bis#> .
+@prefix nlcs-vwl: <http://otl.nlcs.nl/def/domeinwaarde/> .
+@prefix Qotl: <https://example.data.org/qotlontology#> .
+@prefix tables: <http://topbraid.org/tables#> .
+@prefix crosswalkprojects: <http://teamwork.topbraidlive.org/crosswalkprojects#> .
+@prefix Example: <https://metadata.kadaster.nl/kadaster/ontotbc/model/def/Example#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sm2wsdl: <http://topbraid.org/sparqlmotion/sm2wsdl.sms#> .
+@prefix model: <http://ont.cbnl.org/model/dev/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix tasks: <http://topbraid.org/tasks#> .
+@prefix shape: <http://modellen.mim-standaard.nl/def/mim-shapes#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix io: <https://wistor.nl/io#> .
+@prefix index: <https://standards.iso.org/iso/21597/-1/ed-1/en/method1/delivery/index#> .
+@prefix otl-rws-appl: <http://otl.rws.nl/otl-rws-appl#> .
+@prefix PIMTab: <https://www.buildingbits.nl/2019/PIMTab#> .
+@prefix mc-rules: <http://otl.rws.nl/mc-rules#> .
+@prefix UserManagementV1: <http://www.buildingbits.nl/UserManagementV1#> .
+@prefix otl-org-nl-overheid: <http://otl.rws.nl/otl-org-nl-overheid#> .
+@prefix cme: <https://ofcoursecme.com/example#> .
+@prefix tnt: <http://otl.tennet.eu/tnt#> .
+@prefix metamodel: <http://www.kvk.nl/handelsregister/def/v1/metamodel#> .
+@prefix soqk: <http://qudt.org/vocab/soqk/> .
+@prefix voorbeeldsparql: <http://www.kvk.nl/innovatielab/2020/voorbeeldsparql#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix hammOTL: <https://www.boskalis.com/2022/pim/demo/hammOTL#> .
+@prefix tablesmap: <http://topbraid.org/spin/tablesmap#> .
+@prefix sml: <https://w3id.org/sml/def#> .
+@prefix crosswalk: <http://topbraid.org/crosswalk#> .
+@prefix smls: <https://w3id.org/def/smls-owl#> .
+@prefix top: <http://www.movares.nl/alpha/otl/top#> .
+@prefix ams-otl-def: <http://www.wistor.nl/otleditor/ontologydefinition/assetmanagementsystem#> .
+@prefix nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix otl-rws-org: <http://otl.rws.nl/otl-rws-org#> .
+@prefix otl-rws-pr: <http://otl.rws.nl/otl-rws-pr#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix begrip_polis: <http://opendata.stelselcatalogus.nl/polis/id/begrip/> .
+@prefix map: <http://www.w3.org/2005/xpath-functions/map> .
+@prefix regelgeving: <http://opendata.stelselcatalogus.nl/stelselcatalogus/id/regelgeving/> .
+@prefix product: <http://www.buy.com/rss/module/productV2/> .
+@prefix begrip_bgt: <http://opendata.stelselcatalogus.nl/bgt/id/begrip/> .
+@prefix change: <http://wistor.nl/changerecord/def#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix nist: <http://physics.nist.gov/cuu/> .
+@prefix groep: <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/groepering/> .
+@prefix cbnlcore: <http://ont.cbnl.org/cb/def/> .
+@prefix ofn: <http://www.ontotext.com/sparql/functions/> .
+@prefix lode: <http://linkedevents.org/ontology/> .
+@prefix NEN: <http://example.org/NEN#> .
+@prefix spra: <http://spinrdf.org/spra#> .
+@prefix ldwid: <https://data.netwerkdigitaalerfgoed.nl/41c3fb/id/> .
+@prefix sato: <https://data.rws.nl/def/sato/> .
+@prefix ldoc: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/document-extractions/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix imbor-2: <https://data.crow.nl/imbor/def/> .
+@prefix constant: <http://qudt.org/vocab/constant/> .
+@prefix rdfdf: <http://www.openlinksw.com/virtrdf-data-formats#> .
+@prefix n1: <http://www.buildingbits.nl/upload/excel/6484d3da-1d8c-4ada-bf7c-f6dc1afad05c/49b8c48e-2bc4-402a-96cf-42943e55d29f#> .
+@prefix ls: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/shapes/> .
+@prefix cor: <http://data.stelselvanbasisregistraties.nl/id/dataset/cor#> .
+@prefix tops: <http://www.topbraid.org/tops#> .
+@prefix ns1: <http://qudt.org/vocab/type/> .
+@prefix ogc: <http://www.opengis.net/> .
+@prefix MD0295: <http://otl.rws.nl/MD0295#> .
+@prefix spec11: <http://www.opengis.net/spec/geosparql/1.1/specification.html#> .
+@prefix xslwd: <http://www.w3.org/TR/WD-xsl> .
+@prefix begrip_banken: <http://opendata.stelselcatalogus.nl/banken/id/begrip/> .
+@prefix unit-v1: <http://qudt.org/vocab/unit#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix pim: <https://www.buildingbits.nl/2021/pim#> .
+@prefix mc: <http://www.linkedmodel.org/owl/schema/core#> .
+@prefix F25Uitbreiding: <http://www.bbsgroep.nl/deflecties/F25Uitbreiding#> .
+@prefix sou: <http://qudt.org/vocab/sou/> .
+@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix neo: <https://sanderdemeij.github.io/neo/> .
+@prefix links: <https://data.bim-connected.com/container/LuuksEersteICDD/links> .
+@prefix hbr-shape: <http://otl.havenbedrijfrotterdam.nl/def/shape/> .
+@prefix ogr: <http://ogr.maptools.org/> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix net: <http://inspire.ec.europa.eu/ont/net#> .
+@prefix rulesV2: <http://www.buildingbits.nl/2021/rulesV2#> .
+@prefix dbpprop: <http://dbpedia.org/property/> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix OTLEditor: <http://wistor.nl/rules/OTLEditor#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix utd: <https://data.rws.nl/def/utd/> .
+@prefix coins: <http://otl.rws.nl/coins#> .
+@prefix otl-pc: <http://otl.rws.nl/otl-pc#> .
+@prefix xsl1999: <http://www.w3.org/1999/XSL/Transform> .
+@prefix my: <http://example.org/myInstances#> .
+@prefix otl-rws-kv: <http://otl.rws.nl/otl-rws-kv#> .
+@prefix tbladmin: <http://server.topbraidlive.org/system-applications/tbladmin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix lbd: <https://linkebuildingdata.org/LBD#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix geosparql: <http://www.ontotext.com/plugins/geosparql#> .
+@prefix dsa: <http://w3id.org/dsa/> .
+@prefix gegeven_banken: <http://opendata.stelselcatalogus.nl/banken/id/gegevenselement/> .
+@prefix spr: <http://spinrdf.org/spr#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix begrip_woz: <http://opendata.stelselcatalogus.nl/woz/id/begrip/> .
+@prefix otl-vvt: <http://otl.rws.nl/otl-vvt#> .
+@prefix bop: <https://w3id.org/bop#> .
+@prefix BPS: <http://www.buildingbits.nl/2017/coins2/BPS#> .
+@prefix tnt-da: <http://otl.tennet.eu/tnt/def/allocation/> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix tnt-dc: <http://otl.tennet.eu/tnt/def/dc/> .
+@prefix yago: <http://dbpedia.org/class/yago/> .
+@prefix demo: <http://www.example.org/demo/> .
+@prefix sql: <sql:> .
+@prefix tnt-ct: <http://otl.tennet.eu/tnt/def/collection/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix primitives: <http://otl.rws.nl/primitives#> .
+@prefix begrip_verzekeraars: <http://opendata.stelselcatalogus.nl/verzekeraars/id/begrip/> .
+@prefix mep: <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix mc-mi-types: <http://otl.rws.nl/mc-mi-types#> .
+@prefix mesh: <http://purl.org/commons/record/mesh/> .
+@prefix VanTotKilometrering: <http://www.gelderland.nl/coins2/VanTotKilometrering.rdf#> .
+@prefix begrip_depositogarantiestelsel: <http://opendata.stelselcatalogus.nl/depositogarantiestelsel/id/begrip/> .
+@prefix sandbox: <https://app-staging.wistor.nl/projects/jeffreys-sandbox/un2MA/> .
+@prefix locatieadres: <http://www.kvk.nl/handelsregister/def/v1/locatieadres#> .
+@prefix nen3610-ont: <http://modellen.geostandaarden.nl/def/nen3610-2022/> .
+@prefix cbim: <http://www.coinsweb.nl/cbim-1.1.owl#> .
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix mengsel: <http://www.buildingbits.nl/rws/bimp/2020/def/asfaltdb#> .
+@prefix pf: <http://jena.hpl.hp.com/ARQ/property#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix owlim: <http://www.ontotext.com/trree/owlim#> .
+@prefix qudt-dimension: <http://qudt.org/vocab/dimension#> .
+@prefix otl-wvt: <http://otl.rws.nl/otl-wvt#> .
+@prefix tagger: <http://evn.topbraidlive.org/tagger#> .
+@prefix upper: <http://www.kvk.nl/handelsregister/def/v1/upper#> .
+@prefix delta: <http://www.buildingbits.nl/coins2/delta#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix protseq: <http://purl.org/science/protein/bysequence/> .
+@prefix GBA2: <http://data.stelsselcatalogus/id/dataset/GBA2#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix apf: <http://jena.apache.org/ARQ/property#> .
+@prefix tnt-et: <http://otl.tennet.eu/tnt/def/elementtype/> .
+@prefix cidoc-crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix mim-item-ns: <http://ontology.mim-namespace.org/def/modelname#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix app: <http://www.bbsgroep.nl/application/v1/> .
+@prefix cts: <http://www.buildingbits.nl/2020/cts#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
+@prefix ifcowl: <http://ifcowl.openbimstandards.org/IFC2X3_TC1#> .
+@prefix skosspin: <http://topbraid.org/spin/skosspin#> .
+@prefix nlcs-groep: <http://otl.nlcs.nl/def/groepering/> .
+@prefix hbr-vwl: <http://otl.havenbedrijfrotterdam.nl/def/domeinwaarde/> .
+@prefix frbr: <http://vocab.org/frbr/core#> .
+@prefix begrip_bri: <http://opendata.stelselcatalogus.nl/bri/id/begrip/> .
+@prefix si-constant: <https://si-digital-framework.org/constants/> .
+@prefix salience: <http://www.bbsgroep.nl/application/utils/salience#> .
+@prefix skosapp: <http://topbraid.org/skos/skosapp.ui#> .
+@prefix begrip_brk: <http://opendata.stelselcatalogus.nl/brk/id/begrip/> .
+@prefix rf: <http://otl.rws.nl/coins2/rws-referentiekader.rdf#> .
+@prefix begrip_bro: <http://opendata.stelselcatalogus.nl/bro/id/begrip/> .
+@prefix lfunctions: <http://example.org/lfunctions#> .
+@prefix begrip_brp: <http://opendata.stelselcatalogus.nl/brp/id/begrip/> .
+@prefix pnv: <https://w3id.org/pnv#> .
+@prefix adam-term: <http://otl.amsterdam.nl/vocabulaire/term#> .
+@prefix begrip_brt: <http://opendata.stelselcatalogus.nl/brt/id/begrip/> .
+@prefix gegeven_cor: <http://opendata.stelselcatalogus.nl/cor/id/gegevenselement/> .
+@prefix begrip_brv: <http://opendata.stelselcatalogus.nl/brv/id/begrip/> .
+@prefix etim: <http://ont.cbnl.org/cb/ETIM/def/> .
+@prefix overheid: <http://standaarden.overheid.nl/owms/terms/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix cur: <http://qudt.org/vocab/currency/> .
+@prefix verbindingen: <http://www.kvk.nl/innovatielab/ld/2020/verbindingen#> .
+@prefix omg: <https://w3id.org/omg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix imbor-meta: <https://data.crow.nl/imbor/aanvullend-metamodel/> .
+@prefix mim: <http://modellen.mim-standaard.nl/def/mim#> .
+@prefix rxml: <http://example.org/test1/> .
+@prefix sc: <http://purl.org/science/owl/sciencecommons/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix rss: <http://purl.org/rss/1.0/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix imgeo: <http://www.geostandaarden.nl/imgeo/def/2.1#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix gisib-o: <http://otl.amsterdam.nl/def/gisib/objecttype/> .
+@prefix gisib-p: <http://otl.amsterdam.nl/def/gisib/eigenschap/> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix otl-m-coins-base: <http://otl.rws.nl/otl-m-coins-base#> .
+@prefix sr: <http://www.openrdf.org/config/repository/sail#> .
+@prefix c-bim-fs: <http://www.modelservers.org/public/COINS/1.1/models/cbim-fs-1.1.owl#> .
+@prefix otl-doc: <http://otl.rws.nl/otl-doc#> .
+@prefix mdto: <http://www.nationaalarchief.nl/mdto#> .
+@prefix stat: <http://www.w3.org/ns/posix/stat#> .
+@prefix si-quantity: <https://si-digital-framework.org/SI/quantities/> .
+@prefix polis: <http://data.stelselvanbasisregistraties.nl/id/dataset/polis#> .
+@prefix otldemo: <http://www.laces-platform.tech/semmtech/ns/semmtech/private/live/demo/library/infrastructure-otl/> .
+@prefix rfrws: <http://www.rws.nl/reference_frameworks/rf-rws-1.1-20150624.owl#> .
+@prefix wstr: <http://wistor.nl/conversion#> .
+@prefix wsf-otl-def: <http://www.wistor.nl/otleditor/ontologydefinition/wetterskipfryslan#> .
+@prefix cbnl: <http://ont.cb-nl.nl/cb/def/> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix inst: <http://linkedbuildingdata.net/ifc/resources20160607_145724/> .
+@prefix otl-mat: <http://otl.rws.nl/otl-mat#> .
+@prefix v1: <http://www.kvk.nl/handelsregister/gegevenswoordenboek/hr/hr/def/v1#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix v2: <http://www.bbsgroep.nl/application/v2/> .
+@prefix imbor-mim: <https://data.crow.nl/imbor/mim/> .
+@prefix simplestijl: <http://www.kvk.nl/handelsregister/def/v1/simplestijl#> .
+@prefix aisotl: <https://www.buildingbits.nl/2021/bimp/otl/AIS#> .
+@prefix skostemplate: <http://topbraid.org/spin/skostemplates#> .
+@prefix charts: <http://uispin.org/charts#> .
+@prefix adam-o: <http://otl.amsterdam.nl/def/objecttype/> .
+@prefix Countries: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix adam-p: <http://otl.amsterdam.nl/def/eigenschap/> .
+@prefix spaqlTab: <http://www.buildingbits.nl/apps/spaqlTab#> .
+@prefix project: <http://wistor.nl/project/def/> .
+@prefix express: <https://w3id.org/express#> .
+@prefix features: <http://www.bbsgroep.nl/features#> .
+@prefix Container: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix ui: <http://uispin.org/ui#> .
+@prefix lcr-rf: <http://otl.rws.nl/lcr-rf#> .
+@prefix qudt-quantity: <http://qudt.org/vocab/quantity#> .
+@prefix Part1Schema: <https://standards.iso.org/iso/21597/-1/ed-1/en/AnnexD/Part1Schema#> .
+@prefix graaf: <https://data.rws.nl/def/nen-2767-4/1-5+1/> .
+@prefix begrip_cor: <http://opendata.stelselcatalogus.nl/cor/id/begrip/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix OTL-GLD: <http://bim.provinciegelderland.nl/GWW/OTL/OTL-GLD.owl> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix imgeoCoins: <http://www.buildingbits.nl/coins2/draft/IMGEO.rdf#> .
+@prefix gegeven_bri: <http://opendata.stelselcatalogus.nl/bri/id/gegevenselement/> .
+@prefix gegeven_brk: <http://opendata.stelselcatalogus.nl/brk/id/gegevenselement/> .
+@prefix imbor-ext: <https://data.crow.nl/imbor/def/ext/> .
+@prefix jfn: <java:com.hp.hpl.jena.sparql.function.library.> .
+@prefix COINSWOA: <http://www.coinsweb.nl/COINSWOA.rdf#> .
+@prefix cheobs: <http://ont.cb-nl.nl/cb/cheobs/def/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix mimdoc: <http://definities.mim-standaard.nl/id/referentie/> .
+@prefix vogeleOTL: <https://www.boskalis.com/2022/pim/demo/vogeleOTL#> .
+@prefix grddl: <http://www.w3.org/2003/g/data-view#> .
+@prefix coll: <https://data.crow.nl/rest-api/id#> .
+@prefix wistor-otl: <http://example.org/wistor-otl#> .
+@prefix baseShacl: <http://www.buildingbits.nl/icdd/validation/baseShacl#> .
+@prefix rule: <http://otl.amsterdam.nl/def/rule/> .
+@prefix coinsConfig: <http://www.buildingbits.nl/coinsConfig#> .
+@prefix olca: <http://www.lingvoj.org/olca#> .
+@prefix rws: <https://data.rws.nl/def/otl/> .
+@prefix VenRDraagkracht: <http://www.buildingbits.nl/2021/VenRDraagkracht#> .
+@prefix gegeven_bro: <http://opendata.stelselcatalogus.nl/bro/id/gegevenselement/> .
+@prefix gegeven_brp: <http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/> .
+@prefix downloads: <http://data.stelselvanbasisregistraties.nl/stelselcatalogus/id/downloads#> .
+@prefix gegeven_verzekeraars: <http://opendata.stelselcatalogus.nl/verzekeraars/id/gegevenselement/> .
+@prefix gegeven_brt: <http://opendata.stelselcatalogus.nl/brt/id/gegevenselement/> .
+@prefix nen-2767-4: <https://data.rws.nl/def/nen-2767-4/> .
+@prefix gegeven_brv: <http://opendata.stelselcatalogus.nl/brv/id/gegevenselement/> .
+@prefix evnimport: <http://evn.topbraidlive.org/uispin/evnimport#> .
+@prefix exmp-p: <https://example.com/Adam/eigenschap/> .
+@prefix exmp-o: <https://example.com/Adam/objecttype/> .
+@prefix Qotl-geom: <http://example.data.org/qotlgeom#> .
+@prefix pdok: <http://rotterdam.nl/data/pdok#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix imborvwl: <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/domeinwaarde/> .
+@prefix nen3610-col: <http://definities.geostandaarden.nl/nen3610-2022/id/collectie/> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL#> .
+@prefix imbor-refmodels-id: <https://data.crow.nl/imbor-ref/id/> .
+@prefix ObjectKleuren: <http://www.gelderland.nl/coins2/OTL/ObjectKleuren.rdf#> .
+@prefix extjs: <http://uispin.com/extjs#> .
+@prefix owlrl: <http://topbraid.org/spin/owlrl#> .
+@prefix lib-importer: <http://edg.topbraid.solutions/importer/lib#> .
+@prefix xf: <http://www.w3.org/2004/07/xpath-functions> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix yasgui: <http://www.buildingbits.nl/coins2/yasgui#> .
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
+@prefix bam-shape: <http://otl.bam.nl/def/shape/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema> .
+@prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
+@prefix CB23: <http://rotterdam.nl/data/CB23#> .
+@prefix lma: <http://www.rws.nl/bimp/2021/circulair/lma#> .
+@prefix prefix: <http://qudt.org/vocab/prefix/> .
+@prefix OTL: <http://www.bbs.nl/OTL.rdf#> .
+@prefix deprecated: <https://www.kvk.nl/innovatielab/hr/extensie/deprecated#> .
+@prefix swaclasses: <http://topbraid.org/swaclasses#> .
+@prefix ns0: <http://www.movares.nl/OTL/alpha/XYZ/MovaresXML/Objecten/BenS/> .
+@prefix Security: <http://www.buildingbits.nl//2020/Security#> .
+@prefix geom: <http://example.data.org/geom#> .
+@prefix ns4: <http://www.movares.nl/OTL/alpha/XYZ/MovaresXML/Objecten/BenS/Spoorassen/> .
+@prefix ns3: <http://www.movares.nl/OTL/alpha/XYZ/MovaresXML/Relaties/> .
+@prefix ns6: <http://www.coinsweb.nl/cbim-2.0.rdf#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix ns5: <http://www.movares.nl/OTL/alpha/XYZ/MovaresXML/Objecten/RVT/> .
+@prefix ns8: <http://www.buildingbits.nl/coinsproducer/de0958316-5059-4498-b9f4-827f10b44589#OBJ> .
+@prefix ns7: <http://www.buildingbits.nl/coinsproducer/dc2d91ae9-b1a1-4898-ae04-14eb9a48bd8d#OBJ> .
+@prefix ns9: <http://bim.provinciegelderland.nl/GWW/OTL/OTL-GLD.owl#> .
+@prefix mc-top: <http://otl.rws.nl/mc-top#> .
+@prefix dom4: <http://www.semmweb.com/publication/ns/semmtech/schema/w3c-dom4/> .
+@prefix tooi-ont: <https://identifier.overheid.nl/tooi/def/ont/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix comp: <http://example.org/comparison#> .
+@prefix otl: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/otl-manager/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix otl-doctype: <http://otl.rws.nl/otl-doctype#> .
+@prefix Qotl-shape: <http://example.data.org/qotlshacl#> .
+@prefix qudtspin: <http://qudt.org/spin/qudtspin#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix imborp: <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/> .
+@prefix imgeoRefkader: <http://www.gelderland.nl/coins2/imgeoRefkader#> .
+@prefix otl-org-overige: <http://otl.rws.nl/otl-org-overige#> .
+@prefix math: <http://www.w3.org/2005/xpath-functions/math> .
+@prefix creativecommons: <http://creativecommons.org/ns#> .
+@prefix stardog: <tag:stardog:api:> .
+@prefix adam-groep: <http://otl.amsterdam.nl/def/groepering/> .
+@prefix sbi2008: <http://otl.rws.nl/sbi2008#> .
+@prefix qudt-refdata: <http://qudt.org/vocab/refdata/> .
+@prefix tnt-po: <http://otl.tennet.eu/tnt/def/po/> .
+@prefix RDMi: <http://rotterdam.nl/data/ROinstanties#> .
+@prefix sharepoint: <http://topbraid.org/sharepoint#> .
+@prefix gegeven_polis: <http://opendata.stelselcatalogus.nl/polis/id/gegevenselement/> .
+@prefix evnconstraints: <http://topbraid.org/spin/evnconstraints#> .
+@prefix adam-vwl: <http://otl.amsterdam.nl/def/domeinwaarde/> .
+@prefix RDMm: <http://rotterdam.nl/data/RDMmaterialen#> .
+@prefix datatype: <http://qudt.org/vocab/datatype/> .
+@prefix cbimfs: <http://www.coinsweb.nl/cbim-fs-1.1.owl#> .
+@prefix gegeven_woz: <http://opendata.stelselcatalogus.nl/woz/id/gegevenselement/> .
+@prefix tracker: <http://teamwork.topbraidlive.org/ui/tracker#> .
+@prefix tnt-pl: <http://otl.tennet.eu/tnt/def/enumeration/> .
+@prefix otl-orgtype: <http://otl.rws.nl/otl-orgtype#> .
+@prefix graphql: <http://datashapes.org/graphql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gwsw: <http://data.gwsw.nl/1.6/totaal/> .
+@prefix adam-validatie: <http://otl.amsterdam.nl/def/validatie/> .
+@prefix lingvo: <http://www.lingvoj.org/ontology#> .
+@prefix tnt-ot: <http://otl.tennet.eu/tnt/def/objecttype/> .
+@prefix excel: <http://www.wistor.nl/ingestion/excel#> .
+@prefix swon: <http://uispin.org/swon#> .
+@prefix GWSW: <file:///private/var/folders/fx/1drtlm6943vgyffr4gvqq0x80000gn/T/AppTranslocation/47CB9A78-D7B9-46D3-94C8-3BF21E43887E/d/TopBraid%20Composer.app/Contents/MacOS/C:/Users/p003439/documents/MiscApps/Protege_5.0_beta/Data/C:/Users/p003439/documents/MiscApps/Protege_5.0_beta/Data/GWSW.ttl#> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix furn: <http://pi.pauwel.be/voc/furniture#> .
+@prefix hbr-p: <http://otl.havenbedrijfrotterdam.nl/def/eigenschap/> .
+@prefix hbr-o: <http://otl.havenbedrijfrotterdam.nl/def/objecttype/> .
+@prefix data: <http://wistor.nl/data/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gegeven_depositogarantiestelsel: <http://opendata.stelselcatalogus.nl/depositogarantiestelsel/id/gegevenselement/> .
+@prefix kor: <http://example.org/kor/> .
+@prefix imbor-domeinwaarde: <https://data.crow.nl/imbor/id/domeinwaarden/> .
+@prefix mdtosh: <http://www.nationaalarchief.nl/mdto-shacl#> .
+@prefix lkos: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/kos/> .
+@prefix jms: <http://jena.hpl.hp.com/2003/08/jms#> .
+@prefix tnt-rf: <http://otl.tennet.eu/tnt/def/reference/> .
+@prefix swaeditor: <http://topbraid.org/swaeditor#> .
+@prefix aisdata: <http://www.buildingbits.nl/2021/BIMP/AIS#> .
+@prefix html: <http://uispin.org/html#> .
+@prefix otl-units-quantities: <http://otl.rws.nl/otl-units-quantities#> .
+@prefix adam: <http://otl.amsterdam.nl/def/> .
+@prefix ldwdef: <https://data.netwerkdigitaalerfgoed.nl/41c3fb/def/> .
+@prefix ImGeoKoppeling: <http://www.gelderland.nl/coins2/ImGeoKoppeling#> .
+@prefix imbor-refmodels: <https://data.crow.nl/imbor-ref/def/> .
+@prefix IMGEO: <http://example.org/IMGEO#> .
+@prefix donl: <https://data.overheid.nl/dcat.rdf#> .
+@prefix litegraph: <http://www.buildingbits.nl/v1/litegraph.rdf#> .
+@prefix dawgt: <http://www.w3.org/2001/sw/DataAccess/tests/test-dawg#> .
+@prefix edg: <http://edg.topbraid.solutions/model/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix tbc: <https://metadata.kadaster.nl/kadaster/ontotbc/model/def/> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix gu-id: <http://GemeenteUtrecht.nl/id/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix tbl: <http://topbraidlive.org/functions#> .
+@prefix projectadmin: <http://www.buildingbits.nl/v2/projectadmin#> .
+@prefix overheidds: <http://standaarden.overheid.nl/overheidds/terms/> .
+@prefix sail: <http://www.openrdf.org/config/sail#> .
+@prefix qudt-v1: <http://qudt.org/schema/qudt#> .
+@prefix error: <http://www.wistor.nl/ingestion/error#> .
+@prefix Linkset: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
+@prefix swauml: <http://topbraid.org/swauml#> .
+@prefix backspin: <http://topbraid.org/backspin#> .
+@prefix si-unit: <https://si-digital-framework.org/SI/units/> .
+@prefix adam-shape: <http://otl.amsterdam.nl/def/shape/> .
+@prefix array: <http://www.w3.org/2005/xpath-functions/array> .
+@prefix tennet: <http://data.tennet.eu/def/> .
+@prefix virtrdf: <http://www.openlinksw.com/schemas/virtrdf#> .
+@prefix virtcxml: <http://www.openlinksw.com/schemas/virtcxml#> .
+@prefix uploadanyfile: <http://wistor.nl/upload/admin/uploadanyfile#> .
+@prefix utrechtRule: <https://wistor.nl/rules#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix tnt-st: <http://otl.tennet.eu/tnt/def/st/> .
+@prefix bam-o: <http://otl.bam.nl/def/objecttype/> .
+@prefix bam-p: <http://otl.bam.nl/def/eigenschap/> .
+@prefix otl-patroon: <https://data.rws.nl/def/otl-patroon/> .
+@prefix otl-gebrek: <http://otl.rws.nl/otl-gebrek#> .
+@prefix pzh-def: <http://www.wistor.nl/otleditor/ontologydefinition/pzh-otl#> .
+@prefix dds: <https://dds.schiphol.nl/asset/> .
+@prefix cbnlmeta: <http://ont.cbnl.org/metamodel#> .
+@prefix loggingPerspectief: <http://www.buildingbits.nl/application/v2/loggingPerspectief#> .
+@prefix nen3610-beg: <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/> .
+@prefix sbi: <http://www.kvk.nl/handelsregister/def/v1/sbi#> .
+@prefix luc: <http://teamwork.topbraidlive.org/saf/lucene#> .
+@prefix wistor-def: <http://wistor.nl/def#> .
+@prefix tnt-sh: <http://otl.tennet.eu/tnt/def/shape/> .
+
+imbor-2:7f573337-00f1-41a0-98e0-1936837802fa a sh:NodeShape;
+  sh:property imbor-refmodels:feff22ee-c8d9-4fe4-b631-c95d25cf8ea3, imbor-refmodels:77361e3a-9cb4-44eb-ada4-9cc94a13e374,
+    imbor-refmodels:b9093422-fba9-4845-b485-cdb59d18f0a4 .
+
+imbor-2:b7168388-9eb9-4c95-b35e-1ba2660849e8 a sh:NodeShape;
+  sh:property imbor-refmodels:33afac47-5b83-49e1-b2d0-f9366f6f5da8, imbor-refmodels:f6d9c177-fde2-46be-ac66-7f127788edbf .
+
+imbor-2:61526934-9d0c-4a07-8c5d-17f60e1a467a a sh:NodeShape;
+  sh:property imbor-refmodels:57145d3b-a884-446e-b186-8d79b3957ced, imbor-refmodels:a4c93f11-4600-44ae-b32e-3f0ea58a63a6,
+    imbor-refmodels:7c08d5e3-89c9-4132-a5ff-75d8351a1065 .
+
+imbor-2:54a69715-c34a-4303-9682-eb51e8887f36 a sh:NodeShape;
+  sh:property imbor-refmodels:039ae976-93fd-4620-9652-254db2551833, imbor-refmodels:54c4afe6-8c6c-4029-ab24-e95bbdeec8df,
+    imbor-refmodels:f3ed7125-1cb4-4520-8ce0-99161df36b03 .
+
+imbor-2:ffa16bb2-fa5a-49f1-b3e8-794499b02785 a sh:NodeShape;
+  sh:property imbor-refmodels:c92f1a47-86c1-4e6b-a686-fe532eba8d1f, imbor-refmodels:e1dade55-0cb8-4732-a965-a29ae7e244fd,
+    imbor-refmodels:84c6f79e-77e9-44d5-931e-d02b36b43dc9 .
+
+imbor-2:426c0f78-5689-4ec4-9671-6c4bbef2ca25 a sh:NodeShape;
+  sh:property imbor-refmodels:ea9f97d7-3bd9-401c-a47c-be893100fed5 .
+
+imbor-2:abb1e33a-c934-4123-98b0-2d52349e456c a sh:NodeShape;
+  sh:property imbor-refmodels:ebd1cd04-4710-4b91-94bd-57d1361d9f72, imbor-refmodels:4bf25069-5d7b-43c1-b84f-8e202254ff0f .
+
+imbor-2:55ff100d-4b17-4807-a700-a1954151efec a sh:NodeShape;
+  sh:property imbor-refmodels:f7eaa78f-767e-41d3-9a37-27cf84f1621a, imbor-refmodels:ea72bc8f-82a5-42b8-8666-367d381ad739 .
+
+imbor-2:f6f6c34a-540b-46c5-8b49-9681056a1261 a sh:NodeShape;
+  sh:property imbor-refmodels:98553678-2f14-4f40-b62a-2711b8afe06b .
+
+imbor-2:83a942f7-5291-42f0-afb1-9a57d0fb2f15 a sh:NodeShape;
+  sh:property imbor-refmodels:b59def31-7802-4274-9175-69c174095862 .
+
+imbor-2:40bd01ed-180a-4644-ab10-4c94c891a452 a sh:NodeShape;
+  sh:property imbor-refmodels:7a471642-8335-4c0a-84b5-cd49583a2373 .
+
+imbor-2:8a955bf5-0944-46d7-9dc1-f1fdfa0c1be9 a sh:NodeShape;
+  sh:property imbor-refmodels:355be2d1-be99-4b63-88e2-b93897b76842 .
+
+imbor-2:b4935e75-46ca-414d-949d-30a8b801fd5b a sh:NodeShape;
+  sh:property imbor-refmodels:1a8fc430-7377-42c5-933e-1d6106919887 .
+
+imbor-2:f15d86c3-ef9c-4a31-a43e-de3b3f70fbbe a sh:NodeShape;
+  sh:property imbor-refmodels:e1a0b949-5d34-477c-a2c5-daa758f44aea .
+
+imbor-2:7f3202b1-9a3b-4e02-b4f4-31ebce6b8def a sh:NodeShape;
+  sh:property imbor-refmodels:022e85f8-696d-467f-aaa7-bd707ee08f15, imbor-refmodels:35478b9d-8c0a-4772-b7f9-e4b5856fe1b9,
+    imbor-refmodels:87c40c5a-ffbf-45e9-b2ce-ab6486afc6de .
+
+imbor-2:0379b919-1cf8-4546-8091-0a6d0cab3197 a sh:NodeShape;
+  sh:property imbor-refmodels:2031e3de-bce1-4aa0-9c12-9ef2805af53f .
+
+imbor-2:05878201-c7a6-4b1a-9d7c-e3791cfff024 a sh:NodeShape;
+  sh:property imbor-refmodels:05e938b2-92c3-4fcd-8c2a-767e164a2e3a, imbor-refmodels:ce86c5a6-8790-4f95-a2c8-18973ae20078 .
+
+imbor-2:8ccf65b9-cfc3-4d9f-8de8-864c9b123925 a sh:NodeShape;
+  sh:property imbor-refmodels:58fda691-4087-49e9-a2f2-2606eda5938f, imbor-refmodels:153b39f1-94b5-43a4-951d-4c2fdde12f80,
+    imbor-refmodels:9a759e62-0e9d-4af5-b016-3c3351834262 .
+
+imbor-2:6b54fe2f-9897-47da-863c-5a931e89b2de a sh:NodeShape;
+  sh:property imbor-refmodels:b6dcaeaa-a81c-43d5-ac02-f77c0f0840ac, imbor-refmodels:04475b9a-0a0b-49b3-b036-039ea78390be .
+
+imbor-2:2c9f194d-2ea6-494d-89eb-33b1743fe4af a sh:NodeShape;
+  sh:property imbor-refmodels:978bcd8e-0339-445e-b308-dd82ba9f47b2 .
+
+imbor-2:d8ea6737-2f44-4b0c-aa47-39473f027823 a sh:NodeShape;
+  sh:property imbor-refmodels:132b1120-f3f9-4ef0-8f71-25c0bd381230 .
+
+imbor-2:999c662a-cdcc-4feb-8ec6-8818a2ca44e4 a sh:NodeShape;
+  sh:property imbor-refmodels:300af366-ee0f-4f4d-a416-011bed658a27 .
+
+imbor-2:aaad83eb-d568-4cf3-8f76-a26e51cc0714 a sh:NodeShape;
+  sh:property imbor-refmodels:1a6cbd9d-9e86-4c98-b2b7-83c8932afe9a, imbor-refmodels:aa1373fb-eb65-4739-804f-eb50acd2514d .
+
+imbor-2:9726b37e-8766-43ec-a07e-55c51c23d11b a sh:NodeShape;
+  sh:property imbor-refmodels:570b24e1-960b-4909-8b03-cddf81bcd69b .
+
+imbor-2:f05b9a7e-1dfe-4f73-b530-36b600d66d13 a sh:NodeShape;
+  sh:property imbor-refmodels:f4e8342c-cde6-4a72-a88c-0815125f0e57 .
+
+imbor-2:c2b9234a-769b-492b-b9b3-9003d181ed73 a sh:NodeShape;
+  sh:property imbor-refmodels:dd93dfbe-1d07-49b7-8d62-a47743b4beb1 .
+
+imbor-2:5b5f0762-d8ca-4b00-bea0-022aeb187fc6 a sh:NodeShape;
+  sh:property imbor-refmodels:65d1207c-b435-449a-93b3-5bcf134943a7, imbor-refmodels:92c43534-de6c-4edd-816b-c3661bfa68d0 .
+
+imbor-2:a58365fb-feb5-42d4-83eb-7d4b1721f0d7 a sh:NodeShape;
+  sh:property imbor-refmodels:50b24e22-3501-4082-9065-8bd537fcdac2 .
+
+imbor-2:c6a37db7-8406-4c5b-9e44-0aae7c7c5d3e a sh:NodeShape;
+  sh:property imbor-refmodels:b1f551ff-5d09-4964-a7db-aa44b8d02f4d, imbor-refmodels:a3cc94ac-87f2-4de5-9540-68b722a6f421 .
+
+imbor-2:f349d291-f25b-4258-a008-00082f932be9 a sh:NodeShape;
+  sh:property imbor-refmodels:4d088fa7-c14c-4e13-963b-6732aa49417a, imbor-refmodels:3f3a4a3f-5500-48e8-8389-9277b1ce0001 .
+
+imbor-2:9da972d3-03dd-4ccf-ae66-fb712a2a6908 a sh:NodeShape;
+  sh:property imbor-refmodels:b1e349db-b486-47ae-a142-d1971cb09f37, imbor-refmodels:c9df53eb-f7ea-4ed2-8c27-37f318b63e78 .
+
+imbor-2:c538c222-0fa4-43ee-bf06-9512a484a57b a sh:NodeShape;
+  sh:property imbor-refmodels:877cc930-22f1-4dc8-9516-d74c38988ba8, imbor-refmodels:0628883d-6fd2-467c-8231-ad517c77dcc3 .
+
+imbor-2:0dcee6c7-87bc-498c-a02a-25271db1bc9a a sh:NodeShape;
+  sh:property imbor-refmodels:51992aca-b874-4a46-8826-0d142f007036, imbor-refmodels:3e558d2e-ace9-4d63-b6a9-28107de17093,
+    imbor-refmodels:c21e1a1f-1bc2-458f-afab-94c76b53f7ac .
+
+imbor-2:99688fe8-d174-4fc8-a48b-f4762e9467a9 a sh:NodeShape;
+  sh:property imbor-refmodels:b4376f30-885a-484f-9f22-de9b6eb03551 .
+
+imbor-2:79a89ac1-19b0-4756-9971-c40fade1a8fe a sh:NodeShape;
+  sh:property imbor-refmodels:20fa19c9-2fe2-4236-9f65-39f241b7a726 .
+
+imbor-2:9d932904-c4b1-44e0-b151-b6df78f44a92 a sh:NodeShape;
+  sh:property imbor-refmodels:1316ff5a-34ca-4d1c-b585-218f897c6f50, imbor-refmodels:3196f542-5800-4f24-aeca-9f5a1522edd1 .
+
+imbor-2:f9dec4a8-3b9b-4ac7-8128-6c3c78cbb736 a sh:NodeShape;
+  sh:property imbor-refmodels:d7150ae2-80dd-4133-bd9c-92ff83e56a22 .
+
+imbor-2:a5fabae1-a814-42b1-9aae-81440985c367 a sh:NodeShape;
+  sh:property imbor-refmodels:64d68cc4-16cc-48dd-9469-62a3bdd7ae58, imbor-refmodels:8f49364c-61f2-4955-9575-a1ae084a15fd .
+
+imbor-2:ff65feb0-5166-4ed7-a353-54b4199be96f a sh:NodeShape;
+  sh:property imbor-refmodels:2f3ef05c-f2c4-4b99-9f25-430226a0d464 .
+
+imbor-2:3cc08da3-fe89-4be0-9770-a5d27fce794e a sh:NodeShape;
+  sh:property imbor-refmodels:e8381dd0-6ef2-4aae-84dc-35f6f0905174, imbor-refmodels:1f72cdeb-ec50-47bc-ba62-0eacf8d9810b .
+
+imbor-2:dae40396-22ad-426d-9f20-dcb732fe9a5a a sh:NodeShape;
+  sh:property imbor-refmodels:28b94dc7-9249-441a-8336-69b63a45c5ad .
+
+imbor-2:d929653f-6dfc-49ef-a7df-aa1e5f6eeb6f a sh:NodeShape;
+  sh:property imbor-refmodels:457516f5-77a6-40c8-9b48-3b6a383a6080, imbor-refmodels:8c329578-d71c-4b4d-8837-48b629ad7393 .
+
+imbor-2:1bb25a2a-8008-4523-aac5-936cd7f08f2f a sh:NodeShape;
+  sh:property imbor-refmodels:c5db7b69-e41f-4770-9ccc-4bee69735b9d .
+
+imbor-refmodels:ebd1cd04-4710-4b91-94bd-57d1361d9f72 a sh:PropertyShape;
+  skos:prefLabel "Klimplant heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:ebd1cd04-4710-4b91-94bd-57d1361d9f72_qvs .
+
+imbor-refmodels:51992aca-b874-4a46-8826-0d142f007036 a sh:PropertyShape;
+  skos:prefLabel "Waterinrichtingsobject heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:51992aca-b874-4a46-8826-0d142f007036_qvs .
+
+imbor-refmodels:c5db7b69-e41f-4770-9ccc-4bee69735b9d a sh:PropertyShape;
+  skos:prefLabel "Gebouwzone heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:c5db7b69-e41f-4770-9ccc-4bee69735b9d_qvs .
+
+imbor-refmodels:feff22ee-c8d9-4fe4-b631-c95d25cf8ea3 a sh:PropertyShape;
+  skos:prefLabel "Constructieonderdeel heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:feff22ee-c8d9-4fe4-b631-c95d25cf8ea3_qvs .
+
+imbor-refmodels:77361e3a-9cb4-44eb-ada4-9cc94a13e374 a sh:PropertyShape;
+  skos:prefLabel "Constructieonderdeel heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:77361e3a-9cb4-44eb-ada4-9cc94a13e374_qvs .
+
+imbor-refmodels:b9093422-fba9-4845-b485-cdb59d18f0a4 a sh:PropertyShape;
+  skos:prefLabel "Constructieonderdeel heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b9093422-fba9-4845-b485-cdb59d18f0a4_qvs .
+
+imbor-refmodels:c92f1a47-86c1-4e6b-a686-fe532eba8d1f a sh:PropertyShape;
+  skos:prefLabel "Bouwwerk heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:c92f1a47-86c1-4e6b-a686-fe532eba8d1f_qvs .
+
+imbor-refmodels:e1dade55-0cb8-4732-a965-a29ae7e244fd a sh:PropertyShape;
+  skos:prefLabel "Bouwwerk heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:e1dade55-0cb8-4732-a965-a29ae7e244fd_qvs .
+
+imbor-refmodels:84c6f79e-77e9-44d5-931e-d02b36b43dc9 a sh:PropertyShape;
+  skos:prefLabel "Bouwwerk heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:84c6f79e-77e9-44d5-931e-d02b36b43dc9_qvs .
+
+imbor-refmodels:2031e3de-bce1-4aa0-9c12-9ef2805af53f a sh:PropertyShape;
+  skos:prefLabel "Edge heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:2031e3de-bce1-4aa0-9c12-9ef2805af53f_qvs .
+
+imbor-refmodels:e78e1100-d95e-407f-ac88-bb28a8e98955 a sh:PropertyShape;
+  skos:prefLabel "Verharding heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:e78e1100-d95e-407f-ac88-bb28a8e98955_qvs .
+
+imbor-refmodels:76c1a300-8b2e-49bd-9680-5bd9d0b36ea1 a sh:PropertyShape;
+  skos:prefLabel "Leiding heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:76c1a300-8b2e-49bd-9680-5bd9d0b36ea1_qvs .
+
+imbor-refmodels:33afac47-5b83-49e1-b2d0-f9366f6f5da8 a sh:PropertyShape;
+  skos:prefLabel "Put heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:33afac47-5b83-49e1-b2d0-f9366f6f5da8_qvs .
+
+imbor-refmodels:b1e349db-b486-47ae-a142-d1971cb09f37 a sh:PropertyShape;
+  skos:prefLabel "Paalconstructie heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b1e349db-b486-47ae-a142-d1971cb09f37_qvs .
+
+imbor-refmodels:039ae976-93fd-4620-9652-254db2551833 a sh:PropertyShape;
+  skos:prefLabel "Installatie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:039ae976-93fd-4620-9652-254db2551833_qvs .
+
+imbor-refmodels:54c4afe6-8c6c-4029-ab24-e95bbdeec8df a sh:PropertyShape;
+  skos:prefLabel "Installatie heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:54c4afe6-8c6c-4029-ab24-e95bbdeec8df_qvs .
+
+imbor-refmodels:f3ed7125-1cb4-4520-8ce0-99161df36b03 a sh:PropertyShape;
+  skos:prefLabel "Installatie heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f3ed7125-1cb4-4520-8ce0-99161df36b03_qvs .
+
+imbor-refmodels:7a471642-8335-4c0a-84b5-cd49583a2373 a sh:PropertyShape;
+  skos:prefLabel "Bord heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:7a471642-8335-4c0a-84b5-cd49583a2373_qvs .
+
+imbor-refmodels:57145d3b-a884-446e-b186-8d79b3957ced a sh:PropertyShape;
+  skos:prefLabel "Straatmeubilair heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:57145d3b-a884-446e-b186-8d79b3957ced_qvs .
+
+imbor-refmodels:58fda691-4087-49e9-a2f2-2606eda5938f a sh:PropertyShape;
+  skos:prefLabel "Gebouwcomponent heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:58fda691-4087-49e9-a2f2-2606eda5938f_qvs .
+
+imbor-refmodels:153b39f1-94b5-43a4-951d-4c2fdde12f80 a sh:PropertyShape;
+  skos:prefLabel "Gebouwcomponent heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:153b39f1-94b5-43a4-951d-4c2fdde12f80_qvs .
+
+imbor-refmodels:9a759e62-0e9d-4af5-b016-3c3351834262 a sh:PropertyShape;
+  skos:prefLabel "Gebouwcomponent heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:9a759e62-0e9d-4af5-b016-3c3351834262_qvs .
+
+imbor-refmodels:e1a0b949-5d34-477c-a2c5-daa758f44aea a sh:PropertyShape;
+  skos:prefLabel "Sensor heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:e1a0b949-5d34-477c-a2c5-daa758f44aea_qvs .
+
+imbor-refmodels:65d1207c-b435-449a-93b3-5bcf134943a7 a sh:PropertyShape;
+  skos:prefLabel "Vegetatiedak heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:65d1207c-b435-449a-93b3-5bcf134943a7_qvs .
+
+imbor-refmodels:9613b244-ba3b-4289-afe8-9d27b45e3214 a sh:PropertyShape;
+  skos:prefLabel "Gebouw heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:9613b244-ba3b-4289-afe8-9d27b45e3214_qvs .
+
+imbor-refmodels:f6d9c177-fde2-46be-ac66-7f127788edbf a sh:PropertyShape;
+  skos:prefLabel "Put heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f6d9c177-fde2-46be-ac66-7f127788edbf_qvs .
+
+imbor-refmodels:877cc930-22f1-4dc8-9516-d74c38988ba8 a sh:PropertyShape;
+  skos:prefLabel "Scheiding heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:877cc930-22f1-4dc8-9516-d74c38988ba8_qvs .
+
+imbor-refmodels:022e85f8-696d-467f-aaa7-bd707ee08f15 a sh:PropertyShape;
+  skos:prefLabel "Weginrichtingsobject heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:022e85f8-696d-467f-aaa7-bd707ee08f15_qvs .
+
+imbor-refmodels:a4c93f11-4600-44ae-b32e-3f0ea58a63a6 a sh:PropertyShape;
+  skos:prefLabel "Straatmeubilair heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:a4c93f11-4600-44ae-b32e-3f0ea58a63a6_qvs .
+
+imbor-refmodels:7c08d5e3-89c9-4132-a5ff-75d8351a1065 a sh:PropertyShape;
+  skos:prefLabel "Straatmeubilair heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:7c08d5e3-89c9-4132-a5ff-75d8351a1065_qvs .
+
+imbor-refmodels:b6dcaeaa-a81c-43d5-ac02-f77c0f0840ac a sh:PropertyShape;
+  skos:prefLabel "Bak heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b6dcaeaa-a81c-43d5-ac02-f77c0f0840ac_qvs .
+
+imbor-refmodels:c9df53eb-f7ea-4ed2-8c27-37f318b63e78 a sh:PropertyShape;
+  skos:prefLabel "Paalconstructie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:c9df53eb-f7ea-4ed2-8c27-37f318b63e78_qvs .
+
+imbor-refmodels:b59def31-7802-4274-9175-69c174095862 a sh:PropertyShape;
+  skos:prefLabel "Boom heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b59def31-7802-4274-9175-69c174095862_qvs .
+
+imbor-refmodels:b1f551ff-5d09-4964-a7db-aa44b8d02f4d a sh:PropertyShape;
+  skos:prefLabel "Drijvend groen heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b1f551ff-5d09-4964-a7db-aa44b8d02f4d_qvs .
+
+imbor-refmodels:92c43534-de6c-4edd-816b-c3661bfa68d0 a sh:PropertyShape;
+  skos:prefLabel "Vegetatiedak heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:92c43534-de6c-4edd-816b-c3661bfa68d0_qvs .
+
+imbor-refmodels:98553678-2f14-4f40-b62a-2711b8afe06b a sh:PropertyShape;
+  skos:prefLabel "Vertex heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:98553678-2f14-4f40-b62a-2711b8afe06b_qvs .
+
+imbor-refmodels:f7eaa78f-767e-41d3-9a37-27cf84f1621a a sh:PropertyShape;
+  skos:prefLabel "Mast heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f7eaa78f-767e-41d3-9a37-27cf84f1621a_qvs .
+
+imbor-refmodels:05e938b2-92c3-4fcd-8c2a-767e164a2e3a a sh:PropertyShape;
+  skos:prefLabel "Kast heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:05e938b2-92c3-4fcd-8c2a-767e164a2e3a_qvs .
+
+imbor-refmodels:ce86c5a6-8790-4f95-a2c8-18973ae20078 a sh:PropertyShape;
+  skos:prefLabel "Kast heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:ce86c5a6-8790-4f95-a2c8-18973ae20078_qvs .
+
+imbor-refmodels:355be2d1-be99-4b63-88e2-b93897b76842 a sh:PropertyShape;
+  skos:prefLabel "Apparaat heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:355be2d1-be99-4b63-88e2-b93897b76842_qvs .
+
+imbor-refmodels:0628883d-6fd2-467c-8231-ad517c77dcc3 a sh:PropertyShape;
+  skos:prefLabel "Scheiding heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:0628883d-6fd2-467c-8231-ad517c77dcc3_qvs .
+
+imbor-refmodels:64d68cc4-16cc-48dd-9469-62a3bdd7ae58 a sh:PropertyShape;
+  skos:prefLabel "Gevelgroen heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:64d68cc4-16cc-48dd-9469-62a3bdd7ae58_qvs .
+
+imbor-refmodels:e8381dd0-6ef2-4aae-84dc-35f6f0905174 a sh:PropertyShape;
+  skos:prefLabel "Plantensoortlocatie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:e8381dd0-6ef2-4aae-84dc-35f6f0905174_qvs .
+
+imbor-refmodels:1f72cdeb-ec50-47bc-ba62-0eacf8d9810b a sh:PropertyShape;
+  skos:prefLabel "Plantensoortlocatie heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:1f72cdeb-ec50-47bc-ba62-0eacf8d9810b_qvs .
+
+imbor-refmodels:a3cc94ac-87f2-4de5-9540-68b722a6f421 a sh:PropertyShape;
+  skos:prefLabel "Drijvend groen heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:a3cc94ac-87f2-4de5-9540-68b722a6f421_qvs .
+
+imbor-refmodels:d434306e-3363-4490-8951-986752e16971 a sh:PropertyShape;
+  skos:prefLabel "Kunstwerk heeft begrenzing MultiSurface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:d434306e-3363-4490-8951-986752e16971_qvs .
+
+imbor-refmodels:04475b9a-0a0b-49b3-b036-039ea78390be a sh:PropertyShape;
+  skos:prefLabel "Bak heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:04475b9a-0a0b-49b3-b036-039ea78390be_qvs .
+
+imbor-refmodels:0bc64432-e0c7-4bd5-9f2f-760ce9f07d2b a sh:PropertyShape;
+  skos:prefLabel "Kunstwerk heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:0bc64432-e0c7-4bd5-9f2f-760ce9f07d2b_qvs .
+
+imbor-refmodels:4bf25069-5d7b-43c1-b84f-8e202254ff0f a sh:PropertyShape;
+  skos:prefLabel "Klimplant heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:4bf25069-5d7b-43c1-b84f-8e202254ff0f_qvs .
+
+imbor-refmodels:3631bfda-f394-4e5f-aef7-cf9c95529ac4 a sh:PropertyShape;
+  skos:prefLabel "Compartiment heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:3631bfda-f394-4e5f-aef7-cf9c95529ac4_qvs .
+
+imbor-refmodels:3e558d2e-ace9-4d63-b6a9-28107de17093 a sh:PropertyShape;
+  skos:prefLabel "Waterinrichtingsobject heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:3e558d2e-ace9-4d63-b6a9-28107de17093_qvs .
+
+imbor-refmodels:35478b9d-8c0a-4772-b7f9-e4b5856fe1b9 a sh:PropertyShape;
+  skos:prefLabel "Weginrichtingsobject heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:35478b9d-8c0a-4772-b7f9-e4b5856fe1b9_qvs .
+
+imbor-refmodels:8f49364c-61f2-4955-9575-a1ae084a15fd a sh:PropertyShape;
+  skos:prefLabel "Gevelgroen heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:8f49364c-61f2-4955-9575-a1ae084a15fd_qvs .
+
+imbor-refmodels:c21e1a1f-1bc2-458f-afab-94c76b53f7ac a sh:PropertyShape;
+  skos:prefLabel "Waterinrichtingsobject heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:c21e1a1f-1bc2-458f-afab-94c76b53f7ac_qvs .
+
+imbor-refmodels:b410b818-da93-4db7-ae95-760080864bac a sh:PropertyShape;
+  skos:prefLabel "Kunstwerk heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b410b818-da93-4db7-ae95-760080864bac_qvs .
+
+imbor-refmodels:4d088fa7-c14c-4e13-963b-6732aa49417a a sh:PropertyShape;
+  skos:prefLabel "Solitaire plant heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:4d088fa7-c14c-4e13-963b-6732aa49417a_qvs .
+
+imbor-refmodels:3f3a4a3f-5500-48e8-8389-9277b1ce0001 a sh:PropertyShape;
+  skos:prefLabel "Solitaire plant heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:3f3a4a3f-5500-48e8-8389-9277b1ce0001_qvs .
+
+imbor-refmodels:132b1120-f3f9-4ef0-8f71-25c0bd381230 a sh:PropertyShape;
+  skos:prefLabel "Gemaalcomplex heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:132b1120-f3f9-4ef0-8f71-25c0bd381230_qvs .
+
+imbor-refmodels:28b94dc7-9249-441a-8336-69b63a45c5ad a sh:PropertyShape;
+  skos:prefLabel "Veerverbinding heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:28b94dc7-9249-441a-8336-69b63a45c5ad_qvs .
+
+imbor-refmodels:570b24e1-960b-4909-8b03-cddf81bcd69b a sh:PropertyShape;
+  skos:prefLabel "Recreatiezone heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:570b24e1-960b-4909-8b03-cddf81bcd69b_qvs .
+
+imbor-refmodels:ea72bc8f-82a5-42b8-8666-367d381ad739 a sh:PropertyShape;
+  skos:prefLabel "Mast heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:ea72bc8f-82a5-42b8-8666-367d381ad739_qvs .
+
+imbor-refmodels:87c40c5a-ffbf-45e9-b2ce-ab6486afc6de a sh:PropertyShape;
+  skos:prefLabel "Weginrichtingsobject heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:87c40c5a-ffbf-45e9-b2ce-ab6486afc6de_qvs .
+
+imbor-refmodels:d7150ae2-80dd-4133-bd9c-92ff83e56a22 a sh:PropertyShape;
+  skos:prefLabel "Constructielaag heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:d7150ae2-80dd-4133-bd9c-92ff83e56a22_qvs .
+
+imbor-refmodels:1a8fc430-7377-42c5-933e-1d6106919887 a sh:PropertyShape;
+  skos:prefLabel "Groenobject heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:1a8fc430-7377-42c5-933e-1d6106919887_qvs .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#Bodem> a sh:NodeShape;
+  sh:property imbor-refmodels:42ebcaeb-53e5-4450-9089-987e21dc5052 .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#Gebouw> a sh:NodeShape;
+  sh:property imbor-refmodels:9613b244-ba3b-4289-afe8-9d27b45e3214 .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#Kunstwerk> a sh:NodeShape;
+  sh:property imbor-refmodels:d434306e-3363-4490-8951-986752e16971, imbor-refmodels:0bc64432-e0c7-4bd5-9f2f-760ce9f07d2b,
+    imbor-refmodels:b410b818-da93-4db7-ae95-760080864bac .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#Leiding> a sh:NodeShape;
+  sh:property imbor-refmodels:76c1a300-8b2e-49bd-9680-5bd9d0b36ea1 .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#Oppervlaktewater> a sh:NodeShape;
+  sh:property imbor-refmodels:b65ae06d-1198-49c4-9683-693a70e1d0b3 .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#Verharding> a sh:NodeShape;
+  sh:property imbor-refmodels:e78e1100-d95e-407f-ac88-bb28a8e98955 .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#VirtueleRuimte> a sh:NodeShape;
+  sh:property imbor-refmodels:9fdf2655-562d-4c75-84ff-9ff1dbaa1b35, imbor-refmodels:bcb95e88-9c07-4802-adef-f2e80462b300 .
+
+imbor-2:742fc02c-5373-4bd4-91c9-2adb715f2ef4 a sh:NodeShape;
+  sh:property imbor-refmodels:0fcfe23e-63b9-44fc-832e-f625f061ad38 .
+
+imbor-2:8d44433b-701c-4838-93d2-695c50f21eaf a sh:NodeShape;
+  sh:property imbor-refmodels:81b99e84-b931-4812-8d21-901e0cc8a1b3, imbor-refmodels:b9f4aaa1-f79a-4d2c-85d4-f06bbd7e8397 .
+
+imbor-2:9fece3da-0e70-4871-939b-429d10952e39 a sh:NodeShape;
+  sh:property imbor-refmodels:b95811e6-5849-4a62-9bb6-3e4c63e9db78, imbor-refmodels:cc2f0e34-f683-410a-9b7e-b901eff59fd8 .
+
+imbor-2:acb230e4-46da-4cf1-806e-01d4753debf7 a sh:NodeShape;
+  sh:property imbor-refmodels:e4240050-da29-44ba-b944-a9cf6612a55d .
+
+imbor-2:cfb098b7-e165-4694-9d39-8fa9dd94f836 a sh:NodeShape;
+  sh:property imbor-refmodels:0594163f-995d-4373-acf5-410268ea96d1, imbor-refmodels:4a89b2b5-f9ed-4da7-9820-7b9b85045032 .
+
+imbor-2:d2b2ce5c-27a7-4f56-a351-0456e216c83a a sh:NodeShape;
+  sh:property imbor-refmodels:58ff060a-8197-4f63-b540-7875efed3545, imbor-refmodels:b1fcb0dc-c2fe-4875-b67d-d615df6223e5 .
+
+imbor-2:d8b3dac2-7f92-4f54-842e-0b77d6ff06c0 a sh:NodeShape;
+  sh:property imbor-refmodels:07d129b9-e065-49c3-9585-49ccf58e16d3, imbor-refmodels:6ace54bd-051b-405a-a932-4cf85952f54d .
+
+imbor-2:f143a9f8-5c27-4008-9d62-012a13a57962 a sh:NodeShape;
+  sh:property imbor-refmodels:87e8ab2f-1850-497f-b149-17d08f814072, imbor-refmodels:f3ccab6a-eea5-4342-8673-5cb55ab26700 .
+
+imbor-refmodels:9fdf2655-562d-4c75-84ff-9ff1dbaa1b35 a sh:PropertyShape;
+  skos:prefLabel "Virtuele ruimte heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:9fdf2655-562d-4c75-84ff-9ff1dbaa1b35_qvs .
+
+imbor-refmodels:bcb95e88-9c07-4802-adef-f2e80462b300 a sh:PropertyShape;
+  skos:prefLabel "Virtuele ruimte heeft begrenzing MultiSurface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:bcb95e88-9c07-4802-adef-f2e80462b300_qvs .
+
+imbor-refmodels:1316ff5a-34ca-4d1c-b585-218f897c6f50 a sh:PropertyShape;
+  skos:prefLabel "Groeiplaats heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:1316ff5a-34ca-4d1c-b585-218f897c6f50_qvs .
+
+imbor-refmodels:3196f542-5800-4f24-aeca-9f5a1522edd1 a sh:PropertyShape;
+  skos:prefLabel "Groeiplaats heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:3196f542-5800-4f24-aeca-9f5a1522edd1_qvs .
+
+gwsw:Aansluiting a sh:NodeShape;
+  sh:property imbor-refmodels:6a2d789b-068f-4f19-b281-60a36e82e1c8, imbor-refmodels:84db5b9d-5062-4c10-a0ac-f956d8ee22f3 .
+
+gwsw:Apparatuurorientatie a sh:NodeShape;
+  sh:property imbor-refmodels:2a4dacf3-c567-427b-976c-bdbe0249a584 .
+
+gwsw:Appendage_orientatie a sh:NodeShape;
+  sh:property imbor-refmodels:ada0758c-07c6-4080-8137-3ceb92d2d45c .
+
+gwsw:Buitengrens a sh:NodeShape;
+  sh:property imbor-refmodels:f58083d5-929a-4a4e-b2bc-1467a0c7739b .
+
+gwsw:Compartiment a sh:NodeShape;
+  sh:property imbor-refmodels:3631bfda-f394-4e5f-aef7-cf9c95529ac4 .
+
+gwsw:Constructieonderdeelorientatie a sh:NodeShape;
+  sh:property imbor-refmodels:8c9530dc-1cd8-4b68-a4a2-902263350106, imbor-refmodels:a2043a59-3c5e-4fcc-be8c-a402954b48bc .
+
+gwsw:Dekselorientatie a sh:NodeShape;
+  sh:property imbor-refmodels:72daa948-95ae-46fc-bb7d-76d1fe0418e9 .
+
+gwsw:Gebiedsorientatie a sh:NodeShape;
+  sh:property imbor-refmodels:f1d01621-44ce-4d8c-977c-36ee64ed6f4d .
+
+gwsw:HydraulischRioleringsmodel a sh:NodeShape;
+  sh:property imbor-refmodels:6118982c-4c10-46d5-8b21-0224e6fe7d50, imbor-refmodels:d3932544-5b46-46c9-a8cf-0796a9cd7ca4 .
+
+gwsw:Kabelorientatie a sh:NodeShape;
+  sh:property imbor-refmodels:353f96d0-da34-4c2f-830d-d4fc166aac97 .
+
+gwsw:ProfielLeiding a sh:NodeShape;
+  sh:property imbor-refmodels:100455ad-9e27-4695-a2d6-4987b8fb7408 .
+
+gwsw:Rioolstreng a sh:NodeShape;
+  sh:property imbor-refmodels:8242575f-b4c0-4ec4-95fc-b860186cd9f8 .
+
+gwsw:Stelsel a sh:NodeShape;
+  sh:property imbor-refmodels:37c59394-3063-4527-837e-4a7fa3629340 .
+
+gwsw:Systeem a sh:NodeShape;
+  sh:property imbor-refmodels:abde17c5-bd00-453a-a09c-f4711527c4d4 .
+
+gwsw:Uitlaat a sh:NodeShape;
+  sh:property imbor-refmodels:cec98d99-4c44-4182-8054-78d12fdefdcd .
+
+imbor-2:7269afec-2a3b-4edc-8ced-68b29da15b93 a sh:NodeShape;
+  sh:property imbor-refmodels:f0998af9-a859-438c-b569-627f41c7edde .
+
+imbor-2:7d6259a9-11bc-4856-affe-cf469fcf24b6 a sh:NodeShape;
+  sh:property imbor-refmodels:a6b1016d-c067-432f-8418-6d76f51b039e .
+
+imbor-2:93dec3bd-66da-4a55-9b3c-e5aa19200f20 a sh:NodeShape;
+  sh:property imbor-refmodels:d3dea165-5dcc-4a6a-a7a2-ff16377d863e, imbor-refmodels:d6e466b9-08f4-42d3-9aa2-890c5e5d8179,
+    imbor-refmodels:f5edfcfa-763e-4abc-90b1-21cbd8847c77 .
+
+imbor-2:c86ce12f-eb68-4fac-be45-261d20cf3c91 a sh:NodeShape;
+  sh:property imbor-refmodels:b4fc91d6-74c3-41de-8bd7-d3514bf866b2 .
+
+imbor-refmodels:6a2d789b-068f-4f19-b281-60a36e82e1c8 a sh:PropertyShape;
+  skos:prefLabel "Aansluiting heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:6a2d789b-068f-4f19-b281-60a36e82e1c8_qvs .
+
+imbor-refmodels:84db5b9d-5062-4c10-a0ac-f956d8ee22f3 a sh:PropertyShape;
+  skos:prefLabel "Aansluiting heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:84db5b9d-5062-4c10-a0ac-f956d8ee22f3_qvs .
+
+imbor-refmodels:2a4dacf3-c567-427b-976c-bdbe0249a584 a sh:PropertyShape;
+  skos:prefLabel "Apparatuuroriëntatie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:2a4dacf3-c567-427b-976c-bdbe0249a584_qvs .
+
+imbor-refmodels:ada0758c-07c6-4080-8137-3ceb92d2d45c a sh:PropertyShape;
+  skos:prefLabel "Appendage-oriëntatie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:ada0758c-07c6-4080-8137-3ceb92d2d45c_qvs .
+
+imbor-refmodels:f58083d5-929a-4a4e-b2bc-1467a0c7739b a sh:PropertyShape;
+  skos:prefLabel "Buitengrens heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f58083d5-929a-4a4e-b2bc-1467a0c7739b_qvs .
+
+imbor-refmodels:8c9530dc-1cd8-4b68-a4a2-902263350106 a sh:PropertyShape;
+  skos:prefLabel "Constructieonderdeeloriëntatie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:8c9530dc-1cd8-4b68-a4a2-902263350106_qvs .
+
+imbor-refmodels:a2043a59-3c5e-4fcc-be8c-a402954b48bc a sh:PropertyShape;
+  skos:prefLabel "Constructieonderdeeloriëntatie heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:a2043a59-3c5e-4fcc-be8c-a402954b48bc_qvs .
+
+imbor-refmodels:72daa948-95ae-46fc-bb7d-76d1fe0418e9 a sh:PropertyShape;
+  skos:prefLabel "Dekseloriëntatie heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:72daa948-95ae-46fc-bb7d-76d1fe0418e9_qvs .
+
+imbor-refmodels:f1d01621-44ce-4d8c-977c-36ee64ed6f4d a sh:PropertyShape;
+  skos:prefLabel "Gebiedsoriëntatie heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f1d01621-44ce-4d8c-977c-36ee64ed6f4d_qvs .
+
+imbor-refmodels:6118982c-4c10-46d5-8b21-0224e6fe7d50 a sh:PropertyShape;
+  skos:prefLabel "Hydraulisch rioleringsmodel heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:6118982c-4c10-46d5-8b21-0224e6fe7d50_qvs .
+
+imbor-refmodels:d3932544-5b46-46c9-a8cf-0796a9cd7ca4 a sh:PropertyShape;
+  skos:prefLabel "Hydraulisch rioleringsmodel heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:d3932544-5b46-46c9-a8cf-0796a9cd7ca4_qvs .
+
+imbor-refmodels:353f96d0-da34-4c2f-830d-d4fc166aac97 a sh:PropertyShape;
+  skos:prefLabel "Kabeloriëntatie heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:353f96d0-da34-4c2f-830d-d4fc166aac97_qvs .
+
+imbor-refmodels:100455ad-9e27-4695-a2d6-4987b8fb7408 a sh:PropertyShape;
+  skos:prefLabel "Leidingprofiel heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:100455ad-9e27-4695-a2d6-4987b8fb7408_qvs .
+
+imbor-refmodels:8242575f-b4c0-4ec4-95fc-b860186cd9f8 a sh:PropertyShape;
+  skos:prefLabel "Rioolstreng heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:8242575f-b4c0-4ec4-95fc-b860186cd9f8_qvs .
+
+imbor-refmodels:37c59394-3063-4527-837e-4a7fa3629340 a sh:PropertyShape;
+  skos:prefLabel "Stelsel heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:37c59394-3063-4527-837e-4a7fa3629340_qvs .
+
+imbor-refmodels:abde17c5-bd00-453a-a09c-f4711527c4d4 a sh:PropertyShape;
+  skos:prefLabel "Systeem heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:abde17c5-bd00-453a-a09c-f4711527c4d4_qvs .
+
+imbor-refmodels:cec98d99-4c44-4182-8054-78d12fdefdcd a sh:PropertyShape;
+  skos:prefLabel "Uitlaat heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:cec98d99-4c44-4182-8054-78d12fdefdcd_qvs .
+
+imbor-refmodels:42ebcaeb-53e5-4450-9089-987e21dc5052 a sh:PropertyShape;
+  skos:prefLabel "Bodem heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:42ebcaeb-53e5-4450-9089-987e21dc5052_qvs .
+
+imbor-refmodels:0594163f-995d-4373-acf5-410268ea96d1 a sh:PropertyShape;
+  skos:prefLabel "Tekstmarkering heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:0594163f-995d-4373-acf5-410268ea96d1_qvs .
+
+imbor-refmodels:07d129b9-e065-49c3-9585-49ccf58e16d3 a sh:PropertyShape;
+  skos:prefLabel "Geveltuin heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:07d129b9-e065-49c3-9585-49ccf58e16d3_qvs .
+
+imbor-refmodels:0fcfe23e-63b9-44fc-832e-f625f061ad38 a sh:PropertyShape;
+  skos:prefLabel "Vlakmarkering heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:0fcfe23e-63b9-44fc-832e-f625f061ad38_qvs .
+
+imbor-refmodels:1a6cbd9d-9e86-4c98-b2b7-83c8932afe9a a sh:PropertyShape;
+  skos:prefLabel "Watergang heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:1a6cbd9d-9e86-4c98-b2b7-83c8932afe9a_qvs .
+
+imbor-refmodels:20fa19c9-2fe2-4236-9f65-39f241b7a726 a sh:PropertyShape;
+  skos:prefLabel "Bron heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:20fa19c9-2fe2-4236-9f65-39f241b7a726_qvs .
+
+imbor-refmodels:300af366-ee0f-4f4d-a416-011bed658a27 a sh:PropertyShape;
+  skos:prefLabel "Watervlakte heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:300af366-ee0f-4f4d-a416-011bed658a27_qvs .
+
+imbor-refmodels:457516f5-77a6-40c8-9b48-3b6a383a6080 a sh:PropertyShape;
+  skos:prefLabel "Veldbelijning heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:457516f5-77a6-40c8-9b48-3b6a383a6080_qvs .
+
+imbor-refmodels:4a89b2b5-f9ed-4da7-9820-7b9b85045032 a sh:PropertyShape;
+  skos:prefLabel "Tekstmarkering heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:4a89b2b5-f9ed-4da7-9820-7b9b85045032_qvs .
+
+imbor-refmodels:50b24e22-3501-4082-9065-8bd537fcdac2 a sh:PropertyShape;
+  skos:prefLabel "Tuunwal heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:50b24e22-3501-4082-9065-8bd537fcdac2_qvs .
+
+imbor-refmodels:58ff060a-8197-4f63-b540-7875efed3545 a sh:PropertyShape;
+  skos:prefLabel "Bloemblok heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:58ff060a-8197-4f63-b540-7875efed3545_qvs .
+
+imbor-refmodels:6ace54bd-051b-405a-a932-4cf85952f54d a sh:PropertyShape;
+  skos:prefLabel "Geveltuin heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:6ace54bd-051b-405a-a932-4cf85952f54d_qvs .
+
+imbor-refmodels:81b99e84-b931-4812-8d21-901e0cc8a1b3 a sh:PropertyShape;
+  skos:prefLabel "Symboolmarkering heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:81b99e84-b931-4812-8d21-901e0cc8a1b3_qvs .
+
+imbor-refmodels:87e8ab2f-1850-497f-b149-17d08f814072 a sh:PropertyShape;
+  skos:prefLabel "Lijnmarkering heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:87e8ab2f-1850-497f-b149-17d08f814072_qvs .
+
+imbor-refmodels:8c329578-d71c-4b4d-8837-48b629ad7393 a sh:PropertyShape;
+  skos:prefLabel "Veldbelijning heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:8c329578-d71c-4b4d-8837-48b629ad7393_qvs .
+
+imbor-refmodels:aa1373fb-eb65-4739-804f-eb50acd2514d a sh:PropertyShape;
+  skos:prefLabel "Watergang heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:aa1373fb-eb65-4739-804f-eb50acd2514d_qvs .
+
+imbor-refmodels:b1fcb0dc-c2fe-4875-b67d-d615df6223e5 a sh:PropertyShape;
+  skos:prefLabel "Bloemblok heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b1fcb0dc-c2fe-4875-b67d-d615df6223e5_qvs .
+
+imbor-refmodels:b4376f30-885a-484f-9f22-de9b6eb03551 a sh:PropertyShape;
+  skos:prefLabel "Profiellijn heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b4376f30-885a-484f-9f22-de9b6eb03551_qvs .
+
+imbor-refmodels:b4fc91d6-74c3-41de-8bd7-d3514bf866b2 a sh:PropertyShape;
+  skos:prefLabel "Wegconstructie heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b4fc91d6-74c3-41de-8bd7-d3514bf866b2_qvs .
+
+imbor-refmodels:b95811e6-5849-4a62-9bb6-3e4c63e9db78 a sh:PropertyShape;
+  skos:prefLabel "Keverbank heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b95811e6-5849-4a62-9bb6-3e4c63e9db78_qvs .
+
+imbor-refmodels:b9f4aaa1-f79a-4d2c-85d4-f06bbd7e8397 a sh:PropertyShape;
+  skos:prefLabel "Symboolmarkering heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b9f4aaa1-f79a-4d2c-85d4-f06bbd7e8397_qvs .
+
+imbor-refmodels:cc2f0e34-f683-410a-9b7e-b901eff59fd8 a sh:PropertyShape;
+  skos:prefLabel "Keverbank heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:cc2f0e34-f683-410a-9b7e-b901eff59fd8_qvs .
+
+imbor-refmodels:e4240050-da29-44ba-b944-a9cf6612a55d a sh:PropertyShape;
+  skos:prefLabel "Greppel heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:e4240050-da29-44ba-b944-a9cf6612a55d_qvs .
+
+imbor-refmodels:f0998af9-a859-438c-b569-627f41c7edde a sh:PropertyShape;
+  skos:prefLabel "Drijvend park heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f0998af9-a859-438c-b569-627f41c7edde_qvs .
+
+imbor-refmodels:f3ccab6a-eea5-4342-8673-5cb55ab26700 a sh:PropertyShape;
+  skos:prefLabel "Lijnmarkering heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f3ccab6a-eea5-4342-8673-5cb55ab26700_qvs .
+
+imbor-refmodels:f4e8342c-cde6-4a72-a88c-0815125f0e57 a sh:PropertyShape;
+  skos:prefLabel "Ruimte heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f4e8342c-cde6-4a72-a88c-0815125f0e57_qvs .
+
+imbor-2:5666a1c0-be70-4b4a-a466-990bd39b491b a sh:NodeShape;
+  sh:property imbor-refmodels:2e48b025-a7d8-4467-9f92-a1ab4c60baeb .
+
+imbor-2:ca2ab7bd-d01e-44d3-8570-3677042f6afd a sh:NodeShape;
+  sh:property imbor-refmodels:71b82a13-16bd-432a-a2c9-55d108d37d58 .
+
+imbor-refmodels:b65ae06d-1198-49c4-9683-693a70e1d0b3 a sh:PropertyShape;
+  skos:prefLabel "Oppervlaktewater heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:b65ae06d-1198-49c4-9683-693a70e1d0b3_qvs .
+
+imbor-refmodels:022e85f8-696d-467f-aaa7-bd707ee08f15_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:039ae976-93fd-4620-9652-254db2551833_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:04475b9a-0a0b-49b3-b036-039ea78390be_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:0594163f-995d-4373-acf5-410268ea96d1_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:05e938b2-92c3-4fcd-8c2a-767e164a2e3a_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:0628883d-6fd2-467c-8231-ad517c77dcc3_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:07d129b9-e065-49c3-9585-49ccf58e16d3_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:0bc64432-e0c7-4bd5-9f2f-760ce9f07d2b_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:0fcfe23e-63b9-44fc-832e-f625f061ad38_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:100455ad-9e27-4695-a2d6-4987b8fb7408_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:1316ff5a-34ca-4d1c-b585-218f897c6f50_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:132b1120-f3f9-4ef0-8f71-25c0bd381230_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:153b39f1-94b5-43a4-951d-4c2fdde12f80_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:1a6cbd9d-9e86-4c98-b2b7-83c8932afe9a_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:1a8fc430-7377-42c5-933e-1d6106919887_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:1f72cdeb-ec50-47bc-ba62-0eacf8d9810b_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:2031e3de-bce1-4aa0-9c12-9ef2805af53f_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:20fa19c9-2fe2-4236-9f65-39f241b7a726_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:28b94dc7-9249-441a-8336-69b63a45c5ad_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:2a4dacf3-c567-427b-976c-bdbe0249a584_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:2e48b025-a7d8-4467-9f92-a1ab4c60baeb a sh:PropertyShape;
+  skos:prefLabel "Openbare ruimtelabel heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:2e48b025-a7d8-4467-9f92-a1ab4c60baeb_qvs .
+
+imbor-refmodels:2e48b025-a7d8-4467-9f92-a1ab4c60baeb_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:2f3ef05c-f2c4-4b99-9f25-430226a0d464 a sh:PropertyShape;
+  skos:prefLabel "Plantenbak heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:2f3ef05c-f2c4-4b99-9f25-430226a0d464_qvs .
+
+imbor-refmodels:2f3ef05c-f2c4-4b99-9f25-430226a0d464_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:300af366-ee0f-4f4d-a416-011bed658a27_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:3196f542-5800-4f24-aeca-9f5a1522edd1_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:33afac47-5b83-49e1-b2d0-f9366f6f5da8_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:353f96d0-da34-4c2f-830d-d4fc166aac97_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:35478b9d-8c0a-4772-b7f9-e4b5856fe1b9_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:355be2d1-be99-4b63-88e2-b93897b76842_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:3631bfda-f394-4e5f-aef7-cf9c95529ac4_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:37c59394-3063-4527-837e-4a7fa3629340_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:3e558d2e-ace9-4d63-b6a9-28107de17093_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:3f3a4a3f-5500-48e8-8389-9277b1ce0001_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:42ebcaeb-53e5-4450-9089-987e21dc5052_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:457516f5-77a6-40c8-9b48-3b6a383a6080_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:4a89b2b5-f9ed-4da7-9820-7b9b85045032_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:4bf25069-5d7b-43c1-b84f-8e202254ff0f_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:4d088fa7-c14c-4e13-963b-6732aa49417a_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:50b24e22-3501-4082-9065-8bd537fcdac2_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:51992aca-b874-4a46-8826-0d142f007036_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:54c4afe6-8c6c-4029-ab24-e95bbdeec8df_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:570b24e1-960b-4909-8b03-cddf81bcd69b_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:57145d3b-a884-446e-b186-8d79b3957ced_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:58fda691-4087-49e9-a2f2-2606eda5938f_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:58ff060a-8197-4f63-b540-7875efed3545_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:6118982c-4c10-46d5-8b21-0224e6fe7d50_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:64d68cc4-16cc-48dd-9469-62a3bdd7ae58_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:65d1207c-b435-449a-93b3-5bcf134943a7_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:6a2d789b-068f-4f19-b281-60a36e82e1c8_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:6ace54bd-051b-405a-a932-4cf85952f54d_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:71b82a13-16bd-432a-a2c9-55d108d37d58 a sh:PropertyShape;
+  skos:prefLabel "Plaatsbepalingspunt heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:71b82a13-16bd-432a-a2c9-55d108d37d58_qvs .
+
+imbor-refmodels:71b82a13-16bd-432a-a2c9-55d108d37d58_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:72daa948-95ae-46fc-bb7d-76d1fe0418e9_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:76c1a300-8b2e-49bd-9680-5bd9d0b36ea1_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:77361e3a-9cb4-44eb-ada4-9cc94a13e374_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:7a471642-8335-4c0a-84b5-cd49583a2373_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:7c08d5e3-89c9-4132-a5ff-75d8351a1065_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:81b99e84-b931-4812-8d21-901e0cc8a1b3_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:8242575f-b4c0-4ec4-95fc-b860186cd9f8_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:84c6f79e-77e9-44d5-931e-d02b36b43dc9_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:84db5b9d-5062-4c10-a0ac-f956d8ee22f3_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:877cc930-22f1-4dc8-9516-d74c38988ba8_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:87c40c5a-ffbf-45e9-b2ce-ab6486afc6de_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:87e8ab2f-1850-497f-b149-17d08f814072_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:8c329578-d71c-4b4d-8837-48b629ad7393_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:8c9530dc-1cd8-4b68-a4a2-902263350106_qvs a sh:NodeShape;
+  sh:class sf:Point .
+
+imbor-refmodels:8f49364c-61f2-4955-9575-a1ae084a15fd_qvs a sh:NodeShape;
+  sh:class sf:LineString .
+
+imbor-refmodels:92c43534-de6c-4edd-816b-c3661bfa68d0_qvs a sh:NodeShape;
+  sh:class sf:Surface .
+
+imbor-refmodels:9613b244-ba3b-4289-afe8-9d27b45e3214_qvs a sh:NodeShape .
+
+imbor-refmodels:978bcd8e-0339-445e-b308-dd82ba9f47b2 a sh:PropertyShape;
+  skos:prefLabel "Kunstwerkdeel heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:978bcd8e-0339-445e-b308-dd82ba9f47b2_qvs .
+
+imbor-refmodels:978bcd8e-0339-445e-b308-dd82ba9f47b2_qvs a sh:NodeShape .
+
+imbor-refmodels:98553678-2f14-4f40-b62a-2711b8afe06b_qvs a sh:NodeShape .
+
+imbor-refmodels:9a759e62-0e9d-4af5-b016-3c3351834262_qvs a sh:NodeShape .
+
+imbor-refmodels:9fdf2655-562d-4c75-84ff-9ff1dbaa1b35_qvs a sh:NodeShape .
+
+imbor-refmodels:a2043a59-3c5e-4fcc-be8c-a402954b48bc_qvs a sh:NodeShape .
+
+imbor-refmodels:a3cc94ac-87f2-4de5-9540-68b722a6f421_qvs a sh:NodeShape .
+
+imbor-refmodels:a4c93f11-4600-44ae-b32e-3f0ea58a63a6_qvs a sh:NodeShape .
+
+imbor-refmodels:a6b1016d-c067-432f-8418-6d76f51b039e a sh:PropertyShape;
+  skos:prefLabel "Plasberm heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:a6b1016d-c067-432f-8418-6d76f51b039e_qvs .
+
+imbor-refmodels:a6b1016d-c067-432f-8418-6d76f51b039e_qvs a sh:NodeShape .
+
+imbor-refmodels:aa1373fb-eb65-4739-804f-eb50acd2514d_qvs a sh:NodeShape .
+
+imbor-refmodels:abde17c5-bd00-453a-a09c-f4711527c4d4_qvs a sh:NodeShape .
+
+imbor-refmodels:ada0758c-07c6-4080-8137-3ceb92d2d45c_qvs a sh:NodeShape .
+
+imbor-refmodels:b1e349db-b486-47ae-a142-d1971cb09f37_qvs a sh:NodeShape .
+
+imbor-refmodels:b1f551ff-5d09-4964-a7db-aa44b8d02f4d_qvs a sh:NodeShape .
+
+imbor-refmodels:b1fcb0dc-c2fe-4875-b67d-d615df6223e5_qvs a sh:NodeShape .
+
+imbor-refmodels:b410b818-da93-4db7-ae95-760080864bac_qvs a sh:NodeShape .
+
+imbor-refmodels:b4376f30-885a-484f-9f22-de9b6eb03551_qvs a sh:NodeShape .
+
+imbor-refmodels:b4fc91d6-74c3-41de-8bd7-d3514bf866b2_qvs a sh:NodeShape .
+
+imbor-refmodels:b59def31-7802-4274-9175-69c174095862_qvs a sh:NodeShape .
+
+imbor-refmodels:b65ae06d-1198-49c4-9683-693a70e1d0b3_qvs a sh:NodeShape .
+
+imbor-refmodels:b6dcaeaa-a81c-43d5-ac02-f77c0f0840ac_qvs a sh:NodeShape .
+
+imbor-refmodels:b9093422-fba9-4845-b485-cdb59d18f0a4_qvs a sh:NodeShape .
+
+imbor-refmodels:b95811e6-5849-4a62-9bb6-3e4c63e9db78_qvs a sh:NodeShape .
+
+imbor-refmodels:b9f4aaa1-f79a-4d2c-85d4-f06bbd7e8397_qvs a sh:NodeShape .
+
+imbor-refmodels:bcb95e88-9c07-4802-adef-f2e80462b300_qvs a sh:NodeShape .
+
+imbor-refmodels:c21e1a1f-1bc2-458f-afab-94c76b53f7ac_qvs a sh:NodeShape .
+
+imbor-refmodels:c5db7b69-e41f-4770-9ccc-4bee69735b9d_qvs a sh:NodeShape .
+
+imbor-refmodels:c92f1a47-86c1-4e6b-a686-fe532eba8d1f_qvs a sh:NodeShape .
+
+imbor-refmodels:c9df53eb-f7ea-4ed2-8c27-37f318b63e78_qvs a sh:NodeShape .
+
+imbor-refmodels:cc2f0e34-f683-410a-9b7e-b901eff59fd8_qvs a sh:NodeShape .
+
+imbor-refmodels:ce86c5a6-8790-4f95-a2c8-18973ae20078_qvs a sh:NodeShape .
+
+imbor-refmodels:cec98d99-4c44-4182-8054-78d12fdefdcd_qvs a sh:NodeShape .
+
+imbor-refmodels:d3932544-5b46-46c9-a8cf-0796a9cd7ca4_qvs a sh:NodeShape .
+
+imbor-refmodels:d3dea165-5dcc-4a6a-a7a2-ff16377d863e a sh:PropertyShape;
+  skos:prefLabel "Straatbelijning heeft begrenzing Point";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:d3dea165-5dcc-4a6a-a7a2-ff16377d863e_qvs .
+
+imbor-refmodels:d3dea165-5dcc-4a6a-a7a2-ff16377d863e_qvs a sh:NodeShape .
+
+imbor-refmodels:d434306e-3363-4490-8951-986752e16971_qvs a sh:NodeShape .
+
+imbor-refmodels:d6e466b9-08f4-42d3-9aa2-890c5e5d8179 a sh:PropertyShape;
+  skos:prefLabel "Straatbelijning heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:d6e466b9-08f4-42d3-9aa2-890c5e5d8179_qvs .
+
+imbor-refmodels:d6e466b9-08f4-42d3-9aa2-890c5e5d8179_qvs a sh:NodeShape .
+
+imbor-refmodels:d7150ae2-80dd-4133-bd9c-92ff83e56a22_qvs a sh:NodeShape .
+
+imbor-refmodels:dd93dfbe-1d07-49b7-8d62-a47743b4beb1 a sh:PropertyShape;
+  skos:prefLabel "Onbegroeid terreindeel heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:dd93dfbe-1d07-49b7-8d62-a47743b4beb1_qvs .
+
+imbor-refmodels:dd93dfbe-1d07-49b7-8d62-a47743b4beb1_qvs a sh:NodeShape .
+
+imbor-refmodels:e1a0b949-5d34-477c-a2c5-daa758f44aea_qvs a sh:NodeShape .
+
+imbor-refmodels:e1dade55-0cb8-4732-a965-a29ae7e244fd_qvs a sh:NodeShape .
+
+imbor-refmodels:e4240050-da29-44ba-b944-a9cf6612a55d_qvs a sh:NodeShape .
+
+imbor-refmodels:e78e1100-d95e-407f-ac88-bb28a8e98955_qvs a sh:NodeShape .
+
+imbor-refmodels:e8381dd0-6ef2-4aae-84dc-35f6f0905174_qvs a sh:NodeShape .
+
+imbor-refmodels:ea72bc8f-82a5-42b8-8666-367d381ad739_qvs a sh:NodeShape .
+
+imbor-refmodels:ea9f97d7-3bd9-401c-a47c-be893100fed5 a sh:PropertyShape;
+  skos:prefLabel "Tunneldeel heeft begrenzing Surface";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:ea9f97d7-3bd9-401c-a47c-be893100fed5_qvs .
+
+imbor-refmodels:ea9f97d7-3bd9-401c-a47c-be893100fed5_qvs a sh:NodeShape .
+
+imbor-refmodels:ebd1cd04-4710-4b91-94bd-57d1361d9f72_qvs a sh:NodeShape .
+
+imbor-refmodels:f0998af9-a859-438c-b569-627f41c7edde_qvs a sh:NodeShape .
+
+imbor-refmodels:f1d01621-44ce-4d8c-977c-36ee64ed6f4d_qvs a sh:NodeShape .
+
+imbor-refmodels:f3ccab6a-eea5-4342-8673-5cb55ab26700_qvs a sh:NodeShape .
+
+imbor-refmodels:f3ed7125-1cb4-4520-8ce0-99161df36b03_qvs a sh:NodeShape .
+
+imbor-refmodels:f4e8342c-cde6-4a72-a88c-0815125f0e57_qvs a sh:NodeShape .
+
+imbor-refmodels:f58083d5-929a-4a4e-b2bc-1467a0c7739b_qvs a sh:NodeShape .
+
+imbor-refmodels:f5edfcfa-763e-4abc-90b1-21cbd8847c77 a sh:PropertyShape;
+  skos:prefLabel "Straatbelijning heeft begrenzing Curve";
+  sh:path nen2660:hasBoundary;
+  sh:qualifiedMaxCount 1;
+  sh:qualifiedValueShape imbor-refmodels:f5edfcfa-763e-4abc-90b1-21cbd8847c77_qvs .
+
+imbor-refmodels:f5edfcfa-763e-4abc-90b1-21cbd8847c77_qvs a sh:NodeShape .
+
+imbor-refmodels:f6d9c177-fde2-46be-ac66-7f127788edbf_qvs a sh:NodeShape .
+
+imbor-refmodels:f7eaa78f-767e-41d3-9a37-27cf84f1621a_qvs a sh:NodeShape .
+
+imbor-refmodels:feff22ee-c8d9-4fe4-b631-c95d25cf8ea3_qvs a sh:NodeShape .
+
+<https://data.crow.nl/imbor/addendum/geometrie/> a owl:Ontology .
+
+imbor-refmodels:9613b244-ba3b-4289-afe8-9d27b45e3214_qvs sh:class sf:Surface .
+
+imbor-refmodels:978bcd8e-0339-445e-b308-dd82ba9f47b2_qvs sh:class sf:Surface .
+
+imbor-refmodels:98553678-2f14-4f40-b62a-2711b8afe06b_qvs sh:class sf:Point .
+
+imbor-refmodels:9a759e62-0e9d-4af5-b016-3c3351834262_qvs sh:class sf:Point .
+
+imbor-refmodels:9fdf2655-562d-4c75-84ff-9ff1dbaa1b35_qvs sh:class sf:Surface .
+
+imbor-refmodels:a2043a59-3c5e-4fcc-be8c-a402954b48bc_qvs sh:class sf:LineString .
+
+imbor-refmodels:a3cc94ac-87f2-4de5-9540-68b722a6f421_qvs sh:class sf:Point .
+
+imbor-refmodels:a4c93f11-4600-44ae-b32e-3f0ea58a63a6_qvs sh:class sf:Point .
+
+imbor-refmodels:a6b1016d-c067-432f-8418-6d76f51b039e_qvs sh:class sf:Surface .
+
+imbor-refmodels:aa1373fb-eb65-4739-804f-eb50acd2514d_qvs sh:class sf:Surface .
+
+imbor-refmodels:abde17c5-bd00-453a-a09c-f4711527c4d4_qvs sh:class sf:Surface .
+
+imbor-refmodels:ada0758c-07c6-4080-8137-3ceb92d2d45c_qvs sh:class sf:Point .
+
+imbor-refmodels:b1e349db-b486-47ae-a142-d1971cb09f37_qvs sh:class sf:LineString .
+
+imbor-refmodels:b1f551ff-5d09-4964-a7db-aa44b8d02f4d_qvs sh:class sf:Surface .
+
+imbor-refmodels:b1fcb0dc-c2fe-4875-b67d-d615df6223e5_qvs sh:class sf:Surface .
+
+imbor-refmodels:b410b818-da93-4db7-ae95-760080864bac_qvs sh:class sf:Surface .
+
+imbor-refmodels:b4376f30-885a-484f-9f22-de9b6eb03551_qvs sh:class sf:LineString .
+
+imbor-refmodels:b4fc91d6-74c3-41de-8bd7-d3514bf866b2_qvs sh:class sf:Surface .
+
+imbor-refmodels:b59def31-7802-4274-9175-69c174095862_qvs sh:class sf:Point .
+
+imbor-refmodels:b65ae06d-1198-49c4-9683-693a70e1d0b3_qvs sh:class sf:Surface .
+
+imbor-refmodels:b6dcaeaa-a81c-43d5-ac02-f77c0f0840ac_qvs sh:class sf:Surface .
+
+imbor-refmodels:b9093422-fba9-4845-b485-cdb59d18f0a4_qvs sh:class sf:Surface .
+
+imbor-refmodels:b95811e6-5849-4a62-9bb6-3e4c63e9db78_qvs sh:class sf:Point .
+
+imbor-refmodels:b9f4aaa1-f79a-4d2c-85d4-f06bbd7e8397_qvs sh:class sf:Surface .
+
+imbor-refmodels:bcb95e88-9c07-4802-adef-f2e80462b300_qvs sh:class sf:MultiSurface .
+
+imbor-refmodels:c21e1a1f-1bc2-458f-afab-94c76b53f7ac_qvs sh:class sf:Surface .
+
+imbor-refmodels:c5db7b69-e41f-4770-9ccc-4bee69735b9d_qvs sh:class sf:Surface .
+
+imbor-refmodels:c92f1a47-86c1-4e6b-a686-fe532eba8d1f_qvs sh:class sf:Point .
+
+imbor-refmodels:c9df53eb-f7ea-4ed2-8c27-37f318b63e78_qvs sh:class sf:Point .
+
+imbor-refmodels:cc2f0e34-f683-410a-9b7e-b901eff59fd8_qvs sh:class sf:Surface .
+
+imbor-refmodels:ce86c5a6-8790-4f95-a2c8-18973ae20078_qvs sh:class sf:Point .
+
+imbor-refmodels:cec98d99-4c44-4182-8054-78d12fdefdcd_qvs sh:class sf:Point .
+
+imbor-refmodels:d3932544-5b46-46c9-a8cf-0796a9cd7ca4_qvs sh:class sf:LineString .
+
+imbor-refmodels:d3dea165-5dcc-4a6a-a7a2-ff16377d863e_qvs sh:class sf:Point .
+
+imbor-refmodels:d434306e-3363-4490-8951-986752e16971_qvs sh:class sf:MultiSurface .
+
+imbor-refmodels:d6e466b9-08f4-42d3-9aa2-890c5e5d8179_qvs sh:class sf:Surface .
+
+imbor-refmodels:d7150ae2-80dd-4133-bd9c-92ff83e56a22_qvs sh:class sf:Surface .
+
+imbor-refmodels:dd93dfbe-1d07-49b7-8d62-a47743b4beb1_qvs sh:class sf:Surface .
+
+imbor-refmodels:e1a0b949-5d34-477c-a2c5-daa758f44aea_qvs sh:class sf:Point .
+
+imbor-refmodels:e1dade55-0cb8-4732-a965-a29ae7e244fd_qvs sh:class sf:Surface .
+
+imbor-refmodels:e4240050-da29-44ba-b944-a9cf6612a55d_qvs sh:class sf:LineString .
+
+imbor-refmodels:e78e1100-d95e-407f-ac88-bb28a8e98955_qvs sh:class sf:Surface .
+
+imbor-refmodels:e8381dd0-6ef2-4aae-84dc-35f6f0905174_qvs sh:class sf:Point .
+
+imbor-refmodels:ea72bc8f-82a5-42b8-8666-367d381ad739_qvs sh:class sf:Point .
+
+imbor-refmodels:ea9f97d7-3bd9-401c-a47c-be893100fed5_qvs sh:class sf:Surface .
+
+imbor-refmodels:ebd1cd04-4710-4b91-94bd-57d1361d9f72_qvs sh:class sf:Point .
+
+imbor-refmodels:f0998af9-a859-438c-b569-627f41c7edde_qvs sh:class sf:Surface .
+
+imbor-refmodels:f1d01621-44ce-4d8c-977c-36ee64ed6f4d_qvs sh:class sf:Surface .
+
+imbor-refmodels:f3ccab6a-eea5-4342-8673-5cb55ab26700_qvs sh:class sf:Surface .
+
+imbor-refmodels:f3ed7125-1cb4-4520-8ce0-99161df36b03_qvs sh:class sf:Surface .
+
+imbor-refmodels:f4e8342c-cde6-4a72-a88c-0815125f0e57_qvs sh:class sf:Surface .
+
+imbor-refmodels:f58083d5-929a-4a4e-b2bc-1467a0c7739b_qvs sh:class sf:Surface .
+
+imbor-refmodels:f5edfcfa-763e-4abc-90b1-21cbd8847c77_qvs sh:class sf:LineString .
+
+imbor-refmodels:f6d9c177-fde2-46be-ac66-7f127788edbf_qvs sh:class sf:Point .
+
+imbor-refmodels:f7eaa78f-767e-41d3-9a37-27cf84f1621a_qvs sh:class sf:Surface .
+
+imbor-refmodels:feff22ee-c8d9-4fe4-b631-c95d25cf8ea3_qvs sh:class sf:LineString .
+
+imbor-refmodels:c5db7b69-e41f-4770-9ccc-4bee69735b9d sh:qualifiedMinCount 1 .
+
+imbor-refmodels:77361e3a-9cb4-44eb-ada4-9cc94a13e374 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:e1dade55-0cb8-4732-a965-a29ae7e244fd sh:qualifiedMinCount 1 .
+
+imbor-refmodels:2031e3de-bce1-4aa0-9c12-9ef2805af53f sh:qualifiedMinCount 1 .
+
+imbor-refmodels:e78e1100-d95e-407f-ac88-bb28a8e98955 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:76c1a300-8b2e-49bd-9680-5bd9d0b36ea1 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:039ae976-93fd-4620-9652-254db2551833 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:7a471642-8335-4c0a-84b5-cd49583a2373 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:9a759e62-0e9d-4af5-b016-3c3351834262 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:e1a0b949-5d34-477c-a2c5-daa758f44aea sh:qualifiedMinCount 1 .
+
+imbor-refmodels:9613b244-ba3b-4289-afe8-9d27b45e3214 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:f6d9c177-fde2-46be-ac66-7f127788edbf sh:qualifiedMinCount 1 .
+
+imbor-refmodels:877cc930-22f1-4dc8-9516-d74c38988ba8 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:022e85f8-696d-467f-aaa7-bd707ee08f15 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:a4c93f11-4600-44ae-b32e-3f0ea58a63a6 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:c9df53eb-f7ea-4ed2-8c27-37f318b63e78 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b59def31-7802-4274-9175-69c174095862 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b1f551ff-5d09-4964-a7db-aa44b8d02f4d sh:qualifiedMinCount 1 .
+
+imbor-refmodels:92c43534-de6c-4edd-816b-c3661bfa68d0 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:98553678-2f14-4f40-b62a-2711b8afe06b sh:qualifiedMinCount 1 .
+
+imbor-refmodels:ce86c5a6-8790-4f95-a2c8-18973ae20078 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:355be2d1-be99-4b63-88e2-b93897b76842 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:1f72cdeb-ec50-47bc-ba62-0eacf8d9810b sh:qualifiedMinCount 1 .
+
+imbor-refmodels:04475b9a-0a0b-49b3-b036-039ea78390be sh:qualifiedMinCount 1 .
+
+imbor-refmodels:4bf25069-5d7b-43c1-b84f-8e202254ff0f sh:qualifiedMinCount 1 .
+
+imbor-refmodels:3631bfda-f394-4e5f-aef7-cf9c95529ac4 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:3e558d2e-ace9-4d63-b6a9-28107de17093 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:8f49364c-61f2-4955-9575-a1ae084a15fd sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b410b818-da93-4db7-ae95-760080864bac sh:qualifiedMinCount 1 .
+
+imbor-refmodels:3f3a4a3f-5500-48e8-8389-9277b1ce0001 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:132b1120-f3f9-4ef0-8f71-25c0bd381230 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:570b24e1-960b-4909-8b03-cddf81bcd69b sh:qualifiedMinCount 1 .
+
+imbor-refmodels:ea72bc8f-82a5-42b8-8666-367d381ad739 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:d7150ae2-80dd-4133-bd9c-92ff83e56a22 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:1a8fc430-7377-42c5-933e-1d6106919887 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:9fdf2655-562d-4c75-84ff-9ff1dbaa1b35 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:1316ff5a-34ca-4d1c-b585-218f897c6f50 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:6a2d789b-068f-4f19-b281-60a36e82e1c8 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:2a4dacf3-c567-427b-976c-bdbe0249a584 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:ada0758c-07c6-4080-8137-3ceb92d2d45c sh:qualifiedMinCount 1 .
+
+imbor-refmodels:f58083d5-929a-4a4e-b2bc-1467a0c7739b sh:qualifiedMinCount 1 .
+
+imbor-refmodels:72daa948-95ae-46fc-bb7d-76d1fe0418e9 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:f1d01621-44ce-4d8c-977c-36ee64ed6f4d sh:qualifiedMinCount 1 .
+
+imbor-refmodels:353f96d0-da34-4c2f-830d-d4fc166aac97 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:100455ad-9e27-4695-a2d6-4987b8fb7408 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:8242575f-b4c0-4ec4-95fc-b860186cd9f8 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:37c59394-3063-4527-837e-4a7fa3629340 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:abde17c5-bd00-453a-a09c-f4711527c4d4 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:cec98d99-4c44-4182-8054-78d12fdefdcd sh:qualifiedMinCount 1 .
+
+imbor-refmodels:42ebcaeb-53e5-4450-9089-987e21dc5052 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:0594163f-995d-4373-acf5-410268ea96d1 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:07d129b9-e065-49c3-9585-49ccf58e16d3 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:0fcfe23e-63b9-44fc-832e-f625f061ad38 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:300af366-ee0f-4f4d-a416-011bed658a27 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:50b24e22-3501-4082-9065-8bd537fcdac2 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:81b99e84-b931-4812-8d21-901e0cc8a1b3 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:87e8ab2f-1850-497f-b149-17d08f814072 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:8c329578-d71c-4b4d-8837-48b629ad7393 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:aa1373fb-eb65-4739-804f-eb50acd2514d sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b1fcb0dc-c2fe-4875-b67d-d615df6223e5 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b4376f30-885a-484f-9f22-de9b6eb03551 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b4fc91d6-74c3-41de-8bd7-d3514bf866b2 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:cc2f0e34-f683-410a-9b7e-b901eff59fd8 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:f0998af9-a859-438c-b569-627f41c7edde sh:qualifiedMinCount 1 .
+
+imbor-refmodels:f4e8342c-cde6-4a72-a88c-0815125f0e57 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:b65ae06d-1198-49c4-9683-693a70e1d0b3 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:2e48b025-a7d8-4467-9f92-a1ab4c60baeb sh:qualifiedMinCount 1 .
+
+imbor-refmodels:71b82a13-16bd-432a-a2c9-55d108d37d58 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:978bcd8e-0339-445e-b308-dd82ba9f47b2 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:a6b1016d-c067-432f-8418-6d76f51b039e sh:qualifiedMinCount 1 .
+
+imbor-refmodels:dd93dfbe-1d07-49b7-8d62-a47743b4beb1 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:ea9f97d7-3bd9-401c-a47c-be893100fed5 sh:qualifiedMinCount 1 .
+
+imbor-refmodels:f5edfcfa-763e-4abc-90b1-21cbd8847c77 sh:qualifiedMinCount 1 .
+
+<https://data.crow.nl/imbor/addendum/geometrie/> rdfs:comment "Dit informatieve gedeelte van IMBOR geeft aan welke soort geometrische vastlegging de voorkeur heeft en welke er meer mogelijk zijn."@nl;
+  rdfs:label "IMBOR addendum Geometrie"@nl;
+  owl:imports <https://data.crow.nl/imbor/def/>, <http://www.opengis.net/ont/geosparql#>;
+  owl:versionInfo "IMBOR2025";
+  owl:priorVersion "IMBOR2022" .
